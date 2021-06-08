@@ -8,6 +8,7 @@ module.exports = {
       options: {
         projectId: "azqsohaz",
         dataset: "production",
+          watchMode: true,
       },
     },
     "gatsby-plugin-emotion",
