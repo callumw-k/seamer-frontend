@@ -1,0 +1,48 @@
+:root {
+    --black: black;
+    --orange: #ff4800;
+    --lightGrey: #f2f4f6;
+    --white: white;
+
+    /*TYPOGRAPHY*/
+    --headingFont: 'Open Sans', sans-serif;
+    --bodyFont: 'Open Sans', sans-serif;
+    --baseFontSize: 100%;
+
+    --h1: 2.552rem;
+    --h2: 1.941rem;
+    --h3: 1.453rem;
+    --h4: 1.063rem;
+    --h5: 1.75rem;
+    --smallText: 0.8rem;
+    --biggerHeading: 3.315rem;
+    --jumboHeading: 4.268rem;
+    --fontRegular: 400;
+    --fontBold: 600;
+    --fontExtraBold: 800;
+
+    --defaultFontWeight: var(--fontRegular);
+    --defaultHeadingWeight: var(--fontBold);
+
+    --textColor: var(--black);
+    --backgroundColor: var(--white);
+
+    --linkColor: var(--black);
+
+}
+
+@media screen and (min-width: 768px) {
+    :root {
+        --h1: 3.052rem;
+        --h2: 2.441rem;
+        --h3: 1.953rem;
+        --h4: 1.563rem;
+        --h5: 1.25rem;
+        --biggerHeading: 3.815rem;
+        --jumboHeading: 4.768rem;
+
+        --baseFontSize: 112.5%;
+
+    }
+}
+

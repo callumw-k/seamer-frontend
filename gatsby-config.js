@@ -8,14 +8,14 @@ module.exports = {
       options: {
         projectId: "azqsohaz",
         dataset: "production",
-          watchMode: true,
+        watchMode: true,
       },
     },
     "gatsby-plugin-emotion",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    // "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
@@ -40,6 +40,14 @@ module.exports = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Open Sans:400,600,800"],
+        },
+      },
     },
   ],
 };

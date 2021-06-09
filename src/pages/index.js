@@ -1,14 +1,19 @@
 import * as React from "react";
-import { css } from "@emotion/react";
-import Test from "./test";
-import styled from "@emotion/styled";
 import Layout from "../components/layout";
+import HomeHero from "../components/index/hero";
+import HomeVideo from "../components/index/video";
 
 // markup
 const IndexPage = () => {
   return (
     <Layout>
-      <h1>This is a test.</h1>
+      <HomeHero
+        title={"Tailor Made Brands"}
+        subtitle={"Some kind of double line waffle here that's longish."}
+        internalLinkUrl={"/contact"}
+        internalLinkText={"Here's how"}
+      />
+      <HomeVideo />
     </Layout>
   );
 };
