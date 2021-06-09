@@ -2,6 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import HomeHero from "../components/index/hero";
 import HomeVideo from "../components/index/video";
+import HomeFolio from "../components/index/folio";
 
 // markup
 const IndexPage = () => {
@@ -14,6 +15,7 @@ const IndexPage = () => {
         internalLinkText={"Here's how"}
       />
       <HomeVideo />
+      <HomeFolio />
     </Layout>
   );
 };

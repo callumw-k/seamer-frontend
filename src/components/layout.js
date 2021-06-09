@@ -78,7 +78,7 @@ export default function Layout({ children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
-      <main onMouse>{children}</main>
+      <main>{children}</main>
     </React.Fragment>
   );
 }

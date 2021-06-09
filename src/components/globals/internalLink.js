@@ -13,7 +13,7 @@ const linkStyles = css`
 const RightArrow = styled(BiRightArrowAlt)`
   transition: 200ms margin-left;
   margin-left: 0.25rem;
-  ${(props) => (props.onHover ? "margin-left:0.75rem;" : "")}
+  ${(props) => (props.hover ? "margin-left:0.75rem;" : "")}
 `;
 
 export default function InternalLink(props) {
@@ -27,7 +27,7 @@ export default function InternalLink(props) {
       to={props.internalLinkUrl}
     >
       {props.internalLinkText}
-      <RightArrow onHover={isHover} />
+      <RightArrow hover={isHover ? 1 : 0} />
     </Link>
   );
 }
