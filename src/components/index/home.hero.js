@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { breakpoints, centre_content, fontMarginReset } from "../helpers";
-import "../../css/variables.css";
-import InternalLink from "../globals/internalLink";
 import { css } from "@emotion/react";
+import { breakpoints, centre_content, fontMarginReset } from "../helpers";
+import InternalLink from "../globals/internalLink";
 
 export default function HomeHero(props) {
   const title = props.title;
@@ -27,6 +26,7 @@ export default function HomeHero(props) {
       ${fontMarginReset};
       ${breakpoints.md} {
         font-size: var(--jumboHeading);
+        font-weight: var(--fontExtraBold);
         flex-basis: 40%;
       }
     }
@@ -49,8 +49,8 @@ export default function HomeHero(props) {
       <RightFlexBox>
         <h3>{subtitle ? subtitle : "Subtitle."}</h3>
         <InternalLink
-          internalLinkText={internalLinkText}
-          internalLinkUrl={internalLinkUrl}
+          text={internalLinkText}
+          url={internalLinkUrl}
           extendedStyle={css`
             font-size: var(--h3);
             font-weight: var(--fontBold);

@@ -1,4 +1,8 @@
 import React from "react";
 export default function HomeFolio() {
-  return <p>Test</p>;
+  return (
+    <div>
+      <div></div>
+    </div>
+  );
 }

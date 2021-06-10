@@ -24,9 +24,9 @@ export default function InternalLink(props) {
       onMouseEnter={() => hoverChanger(true)}
       onMouseLeave={() => hoverChanger(false)}
       css={[linkStyles, props.extendedStyle]}
-      to={props.internalLinkUrl}
+      to={props.url}
     >
-      {props.internalLinkText}
+      {props.text}
       <RightArrow hover={isHover ? 1 : 0} />
     </Link>
   );

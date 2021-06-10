@@ -1,3 +1,20 @@
+@font-face {
+    font-family: "Nexa";
+    src: url("../fonts/Nexa-Regular.woff2");
+}
+
+@font-face {
+    font-family: "Nexa";
+    src: url("../fonts/Nexa-Bold.woff2");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Nexa";
+    src: url("../fonts/Nexa-Extra-Bold.woff2");
+    font-weight: 800;
+}
+
 :root {
     --black: black;
     --orange: #ff4800;
@@ -5,8 +22,8 @@
     --white: white;
 
     /*TYPOGRAPHY*/
-    --headingFont: 'Open Sans', sans-serif;
-    --bodyFont: 'Open Sans', sans-serif;
+    --headingFont: 'Nexa', sans-serif;
+    --bodyFont: 'Nexa', sans-serif;
     --baseFontSize: 100%;
 
     --h1: 2.552rem;
@@ -17,6 +34,7 @@
     --smallText: 0.8rem;
     --biggerHeading: 3.315rem;
     --jumboHeading: 4.268rem;
+
     --fontRegular: 400;
     --fontBold: 600;
     --fontExtraBold: 800;

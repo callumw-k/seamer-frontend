@@ -1,6 +1,11 @@
+const dotenv = require("dotenv");
+dotenv.config({ path: ".env" });
 module.exports = {
   siteMetadata: {
     title: "Seamer Design",
+    siteUrl: "https://seamerdesign.com.au",
+    description:
+      "At Seamer Design, we stitch brands together using creative ideas for branding, graphic design, and website design. Call or visit our Melbourne & Ballarat offices.",
   },
   plugins: [
     {
@@ -9,6 +14,7 @@ module.exports = {
         projectId: "azqsohaz",
         dataset: "production",
         watchMode: true,
+        token: process.env.SANITY_TOKEN,
       },
     },
     "gatsby-plugin-emotion",
