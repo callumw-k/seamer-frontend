@@ -12,7 +12,7 @@ const IndexPage = (data) => {
       <HomeHero
         title={"Tailor Made Brands"}
         subtitle={
-          "From branding, graphic design through to website design we’re ready to tailor a solution for you."
+          "From branding and graphic design to web, we’re ready to tailor a solution for you."
         }
         internalLinkUrl={"/contact"}
         internalLinkText={"Here's how"}
