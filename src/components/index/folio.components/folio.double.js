@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   ${breakpoints.max_md} {
-    & > div:first-child {
+    & > div:first-of-type {
       margin-bottom: 4rem;
     }
   }

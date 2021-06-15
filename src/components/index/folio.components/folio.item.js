@@ -1,5 +1,5 @@
 import React from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { StaticImage } from "gatsby-plugin-image";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { breakpoints } from "../../helpers";
@@ -24,7 +24,7 @@ const subtitleStyling = css``;
 export default function FolioItem({ imageUrl, type, title, subtitle, single }) {
   return (
     <div>
-      <GatsbyImage quality={100} image={imageUrl} alt="Yeet" />
+      <StaticImage quality={100} src={"../../../images/adb.jfif"} alt="Yeet" />
       <ContentWrapper single={single}>
         <p css={smallTextStyling}>{type}</p>
         <h3 css={titleStyling}>{title}</h3>
