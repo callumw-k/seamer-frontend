@@ -112,7 +112,7 @@ export default function HomeAboutUs() {
           <h3>{expertiseInfo.brand.title}</h3>
           <ul>
             {expertiseInfo.brand.attributes.map((listItem) => (
-              <li>{listItem}</li>
+              <li key={listItem}>{listItem}</li>
             ))}
           </ul>
         </ExpertiseGridItem>
@@ -120,7 +120,7 @@ export default function HomeAboutUs() {
           <h3>Communications</h3>
           <ul>
             {expertiseInfo.communications.map((listItem) => (
-              <li>{listItem}</li>
+              <li key={listItem}>{listItem}</li>
             ))}
           </ul>
         </ExpertiseGridItem>
@@ -128,7 +128,7 @@ export default function HomeAboutUs() {
           <h3>Digital</h3>
           <ul>
             {expertiseInfo.digital.map((listItem) => (
-              <li>{listItem}</li>
+              <li key={listItem}>{listItem}</li>
             ))}
           </ul>
         </ExpertiseGridItem>
