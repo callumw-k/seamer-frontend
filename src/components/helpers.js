@@ -4,6 +4,7 @@ export const breakpoints = {
   lg: "@media screen and (min-width: 1024px)",
   xl: "@media screen and (min-width: 1280px)",
   xl2: "@media screen and (min-width: 1536px)",
+  max_md: "@media screen and (max-width: 768px)",
 };
 
 export const centre_content = {

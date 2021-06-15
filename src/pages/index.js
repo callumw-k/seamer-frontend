@@ -2,7 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import HomeHero from "../components/index/home.hero";
 import HomeVideo from "../components/index/home.video";
-import HomeFolio from "../components/index/folio/home.folio";
+import HomeFolio from "../components/index/home.folio";
 import HomeAboutUs from "../components/index/home.about-us";
 
 // markup
