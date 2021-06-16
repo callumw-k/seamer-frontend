@@ -1,8 +1,9 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { breakpoints } from "../../helpers";
+import { Link } from "gatsby";
 
 const ContentWrapper = styled.div`
   ${breakpoints.max_md} {
@@ -18,16 +19,27 @@ const smallTextStyling = css`
 const titleStyling = css`
   margin-top: 0;
   margin-bottom: 1rem;
+  font-size: var(--h2);
 `;
 const subtitleStyling = css``;
 
-export default function FolioItem({ imageUrl, type, title, subtitle, single }) {
+export default function FolioItem({
+  alt,
+  image,
+  type,
+  title,
+  subtitle,
+  single,
+  url,
+}) {
   return (
     <div>
-      <StaticImage quality={100} src={"../../../images/adb.jfif"} alt="Yeet" />
+      <GatsbyImage image={image} alt={alt ? alt : title} />
       <ContentWrapper single={single}>
         <p css={smallTextStyling}>{type}</p>
-        <h3 css={titleStyling}>{title}</h3>
+        <Link to={url}>
+          <h3 css={titleStyling}>{title}</h3>
+        </Link>
         <p css={subtitleStyling}>{subtitle}</p>
       </ContentWrapper>
     </div>

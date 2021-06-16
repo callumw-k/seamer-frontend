@@ -5,10 +5,10 @@ import HomeVideo from "../components/index/home.video";
 import HomeFolio from "../components/index/home.folio";
 import HomeAboutUs from "../components/index/home.about-us";
 import { graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
 
 // markup
 const IndexPage = ({ data }) => {
+  const folioItems = data.folioItems.nodes;
   return (
     <Layout>
       <HomeHero
@@ -19,32 +19,33 @@ const IndexPage = ({ data }) => {
         internalLinkUrl={"/contact"}
         internalLinkText={"Here's how"}
       />
-      <HomeVideo />
+      {/*<HomeVideo />*/}
       <HomeAboutUs />
-      <HomeFolio />
-      {console.log(data.folioItems)}
-      {/*<GatsbyImage*/}
-      {/*  alt="Test"*/}
-      {/*  image={data.folioItems.nodes.asset.gatsbyImageData}*/}
-      {/*/>*/}
+      <HomeFolio folioItems={folioItems} />
     </Layout>
   );
 };
 
 export const query = graphql`
   query {
-    folioItems: allSanityFolio {
+    folioItems: allSanityFolio(
+      sort: { order: ASC, fields: _createdAt }
+      limit: 5
+    ) {
       nodes {
         name
         _id
         slug {
           current
         }
-        image {
+        heroImage {
           asset {
+            altText
             gatsbyImageData
           }
         }
+        subtitle
+        type
       }
     }
   }

@@ -1,56 +1,40 @@
 import React from "react";
-import FolioDouble from "./folio.components/folio.double";
 import FolioItem from "./folio.components/folio.item";
+import FolioDouble from "./folio.components/folio.double";
 import FolioSingle from "./folio.components/folio.single";
-import { graphql, useStaticQuery } from "gatsby";
 
-const FolioInfo = {
-  APB: {
-    type: "Branding",
-    title: "Adult Parole Board of Victoria",
-    img: "../../../images/adult-parol-board.jfif",
-    subtitle: "Branding for Victoria’s public safety",
-  },
-};
-//
-// const query = graphql`
-//
-//     query {
-//
-//     }
-//
-// `;
+function FolioItemGenerator({ folioItem }) {
+  return (
+    <FolioItem
+      image={folioItem.heroImage.asset.gatsbyImageData}
+      alt={folioItem.heroImage.asset.altText}
+      type={folioItem.type}
+      title={folioItem.name}
+      subtitle={folioItem.subtitle}
+      url={folioItem.slug.current}
+    />
+  );
+}
 
-export default function HomeFolio() {
+export default function HomeFolio({ folioItems }) {
   return (
     <section>
-      <FolioDouble staggered>
-        <FolioItem
-          imageUrl="../../../images/adb.jfif"
-          type={FolioInfo.APB.type}
-          title="Adult Parole Board of Victoria"
-          subtitle="Branding for Victoria’s public safety"
-        />
-        <FolioItem
-          type="Branding"
-          title="Adult Parole Board of Victoria"
-          subtitle="Branding for Victoria’s public safety"
-        />
+      <FolioDouble>
+        {folioItems.slice(0, 2).map((folioItem) => {
+          return (
+            <FolioItemGenerator key={folioItem._id} folioItem={folioItem} />
+          );
+        })}
       </FolioDouble>
       <FolioSingle>
-        <FolioItem type="Branding" title="Adult Test" subtitle="test" single />
+        <FolioItemGenerator key={folioItems[2]._id} folioItem={folioItems[2]} />
       </FolioSingle>
-      <FolioDouble>
-        <FolioItem
-          type={FolioInfo.APB.type}
-          title="Adult Parole Board of Victoria"
-          subtitle="Branding for Victoria’s public safety"
-        />
-        <FolioItem
-          type="Branding"
-          title="Adult Parole Board of Victoria"
-          subtitle="Branding for Victoria’s public safety"
-        />
+      <FolioDouble staggered={1}>
+        {folioItems.slice(3).map((folioItem) => {
+          return (
+            <FolioItemGenerator key={folioItem._id} folioItem={folioItem} />
+          );
+        })}
       </FolioDouble>
     </section>
   );

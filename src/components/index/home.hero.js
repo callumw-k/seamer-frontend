@@ -30,7 +30,8 @@ export default function HomeHero(props) {
         flex-basis: 40%;
       }
     }
-    h3 {
+    h2 {
+      font-size: var(--h3);
       ${breakpoints.md} {
         ${fontMarginReset}
       }
@@ -47,7 +48,7 @@ export default function HomeHero(props) {
     <Wrapper>
       <h1>{title ? title : "Title"}</h1>
       <RightFlexBox>
-        <h3>{subtitle ? subtitle : "Subtitle."}</h3>
+        <h2>{subtitle ? subtitle : "Subtitle."}</h2>
         <InternalLink
           text={internalLinkText}
           url={internalLinkUrl}
