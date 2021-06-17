@@ -3,7 +3,10 @@ dotenv.config({ path: ".env" });
 module.exports = {
   siteMetadata: {
     title: "Seamer Design",
-    siteUrl: "https://seamerdesign.com.au",
+    titleTemplate: "%s | Seamer Design",
+    url: "https://seamerdesign.com.au",
+    image: "/favicon.png",
+    siteName: "Seamer Design",
     description:
       "At Seamer Design, we stitch brands together using creative ideas for branding, graphic design, and website design. Call or visit our Melbourne & Ballarat offices.",
   },
@@ -25,7 +28,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/favicon.png",
       },
     },
     "gatsby-plugin-mdx",

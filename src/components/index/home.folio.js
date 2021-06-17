@@ -3,7 +3,7 @@ import FolioItem from "./folio.components/folio.item";
 import FolioDouble from "./folio.components/folio.double";
 import FolioSingle from "./folio.components/folio.single";
 
-function FolioItemGenerator({ folioItem }) {
+function FolioItemGenerator({ folioItem, single }) {
   return (
     <FolioItem
       image={folioItem.heroImage.asset.gatsbyImageData}
@@ -12,6 +12,7 @@ function FolioItemGenerator({ folioItem }) {
       title={folioItem.name}
       subtitle={folioItem.subtitle}
       url={folioItem.slug.current}
+      single={single ? single : ""}
     />
   );
 }
@@ -27,7 +28,11 @@ export default function HomeFolio({ folioItems }) {
         })}
       </FolioDouble>
       <FolioSingle>
-        <FolioItemGenerator key={folioItems[2]._id} folioItem={folioItems[2]} />
+        <FolioItemGenerator
+          single
+          key={folioItems[2]._id}
+          folioItem={folioItems[2]}
+        />
       </FolioSingle>
       <FolioDouble staggered={1}>
         {folioItems.slice(3).map((folioItem) => {

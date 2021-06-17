@@ -5,12 +5,20 @@ import HomeVideo from "../components/index/home.video";
 import HomeFolio from "../components/index/home.folio";
 import HomeAboutUs from "../components/index/home.about-us";
 import { graphql } from "gatsby";
+import SEO from "../components/seo";
 
 // markup
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, location }) => {
   const folioItems = data.folioItems.nodes;
+  const indexMeta = data.indexMeta;
+  console.log(indexMeta);
   return (
     <Layout>
+      <SEO
+        title={indexMeta.seoTitle}
+        description={indexMeta.seoDescription}
+        slug={location.pathname}
+      />
       <HomeHero
         title={"Tailor Made Brands"}
         subtitle={
@@ -19,7 +27,7 @@ const IndexPage = ({ data }) => {
         internalLinkUrl={"/contact"}
         internalLinkText={"Here's how"}
       />
-      {/*<HomeVideo />*/}
+      <HomeVideo />
       <HomeAboutUs />
       <HomeFolio folioItems={folioItems} />
     </Layout>
@@ -47,6 +55,12 @@ export const query = graphql`
         subtitle
         type
       }
+    }
+    indexMeta: sanityPages(name: { eq: "Index" }) {
+      seoTitle
+      seoDescription
+      name
+      id
     }
   }
 `;

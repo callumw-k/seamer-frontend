@@ -3,6 +3,7 @@ import { css, Global } from "@emotion/react";
 import "normalize.css";
 import "../css/variables.css";
 import Footer from "./footer";
+import Navbar from "./navbar";
 
 const globalStyles = css`
   * {
@@ -79,6 +80,7 @@ export default function Layout({ children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
+      <Navbar />
       <main>{children}</main>
       <Footer />
     </React.Fragment>

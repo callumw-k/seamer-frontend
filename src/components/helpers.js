@@ -8,8 +8,8 @@ export const breakpoints = {
 };
 
 export const centre_content = {
-  md: `margin: 0 auto; width: 90%; max-width: 1024px`,
-  lg: `margin: 0 auto; width: 90%; max-width: 1280px`,
+  md: `margin: 0 auto; width: 90%; max-width: 1024px;`,
+  lg: `margin: 0 auto; width: 90%; max-width: 1280px;`,
 };
 
 export const fontMarginReset = `

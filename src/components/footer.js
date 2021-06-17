@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { breakpoints, centre_content } from "./helpers";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Wrapper = css`
   margin-top: 10rem;
@@ -90,6 +91,15 @@ const Details = styled.div`
   }
 `;
 
+const FooterWrapper = styled.footer`
+  background-color: #1b1b1b;
+  padding: 4rem 0;
+`;
+
+const footerInner = css`
+  ${centre_content.md};
+`;
+
 export default function Footer() {
   return (
     <>
@@ -172,9 +182,20 @@ export default function Footer() {
           </Details>
         </div>
       </section>
-      <footer style={{ zIndex: 10, position: "relative" }}>
-        <h1>Test</h1>
-      </footer>
+      <FooterWrapper>
+        <div css={footerInner}>
+          <StaticImage
+            css={css`
+              max-width: 300px;
+              margin: 0 auto;
+              display: block;
+            `}
+            src="../images/seamer_logo.png"
+            alt="Seamer Design logo."
+            quality={100}
+          />
+        </div>
+      </FooterWrapper>
     </>
   );
 }
