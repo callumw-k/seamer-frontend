@@ -17,7 +17,6 @@ const WorkInner = styled.div`
 
 const Work = ({ data }) => {
   const folioInfo = data.allSanityFolio.nodes;
-  console.log(folioInfo);
   return (
     <Layout>
       <SEO />
@@ -56,7 +55,8 @@ export const query = graphql`
         subtitle
         heroImage {
           asset {
-            gatsbyImageData
+            gatsbyImageData(aspectRatio: 1.7)
+            altText
           }
         }
       }

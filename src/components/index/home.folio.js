@@ -11,7 +11,7 @@ function FolioItemGenerator({ folioItem, single }) {
       type={folioItem.type}
       title={folioItem.name}
       subtitle={folioItem.subtitle}
-      url={folioItem.slug.current}
+      url={"work/" + folioItem.slug.current}
       single={single ? single : ""}
     />
   );

@@ -10,8 +10,7 @@ import SEO from "../components/seo";
 // markup
 const IndexPage = ({ data, location }) => {
   const folioItems = data.folioItems.nodes;
-  const indexMeta = data.indexMeta;
-  console.log(indexMeta);
+  const indexMeta = data.indexMeta.SEO;
   return (
     <Layout>
       <SEO
@@ -48,8 +47,8 @@ export const query = graphql`
         }
         heroImage {
           asset {
+            gatsbyImageData(aspectRatio: 1.7)
             altText
-            gatsbyImageData
           }
         }
         subtitle
@@ -57,8 +56,10 @@ export const query = graphql`
       }
     }
     indexMeta: sanityPages(name: { eq: "Index" }) {
-      seoTitle
-      seoDescription
+      SEO {
+        seoTitle
+        seoDescription
+      }
       name
       id
     }

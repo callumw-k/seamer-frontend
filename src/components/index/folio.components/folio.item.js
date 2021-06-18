@@ -21,11 +21,6 @@ const titleStyling = css`
   margin-bottom: 1rem;
   font-size: var(--h2);
 `;
-const subtitleStyling = css``;
-
-const ImageWrapper = styled.div`
-  object-fit: cover;
-`;
 
 export default function FolioItem({
   alt,
@@ -39,15 +34,13 @@ export default function FolioItem({
 }) {
   return (
     <div>
-      <ImageWrapper>
-        <GatsbyImage image={image} alt={alt ? alt : title} layout="cover" />
-      </ImageWrapper>
+      <GatsbyImage image={image} alt={alt ? alt : title} />
       <ContentWrapper css={extendStyles} single={single}>
         <p css={smallTextStyling}>{type}</p>
         <Link to={url}>
           <h3 css={titleStyling}>{title}</h3>
         </Link>
-        <p css={subtitleStyling}>{subtitle}</p>
+        <p>{subtitle}</p>
       </ContentWrapper>
     </div>
   );
