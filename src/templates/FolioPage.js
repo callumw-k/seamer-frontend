@@ -5,37 +5,35 @@ import BlockContent from "@sanity/block-content-to-react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "@emotion/styled";
 import { centre_content } from "../components/helpers";
+import GallerySorter from "./foliopage/gallerySorter";
 
 const ContentBlockWrapper = styled.div`
   ${centre_content.lg};
   margin: 4rem auto;
 `;
 
-function GalleryGenerator({ gallery }) {
-  return (
-    <>
-      {gallery.map((image) => (
-        <GatsbyImage
-          key={image.asset.id}
-          alt="yeet"
-          image={image.asset.gatsbyImageData}
-        />
-      ))}
-    </>
-  );
-}
+//function GalleryGenerator({ gallery }) {
+//  return (
+//    <>
+//      {gallery.map((image) => (
+//        <GatsbyImage
+//         key={image.asset.id}
+//          alt="yeet"
+//          image={image.asset.gatsbyImageData}
+//        />
+//      ))}
+//    </>
+//  );
+//}
 
 export default function FolioPage({ data }) {
   const folioPage = data.folioPage;
+  const heroImage = folioPage?.heroImage?.asset;
   return (
     <Layout>
       <GatsbyImage
-        alt={
-          folioPage.heroImage.asset.altText
-            ? folioPage.heroImage.asset.altText
-            : folioPage.name
-        }
-        image={folioPage.heroImage.asset.gatsbyImageData}
+        alt={heroImage?.altText ? heroImage.altText : folioPage.name}
+        image={heroImage.gatsbyImageData}
         quality={100}
       />
       <ContentBlockWrapper>
@@ -45,7 +43,7 @@ export default function FolioPage({ data }) {
           ""
         )}
       </ContentBlockWrapper>
-      <GalleryGenerator gallery={folioPage.Gallery.images} />
+      {<GallerySorter gallery={folioPage.Gallery.images} />}
       <ContentBlockWrapper>
         {folioPage?._rawMiddleContentBlock ? (
           <BlockContent blocks={folioPage._rawMiddleContentBlock} />
