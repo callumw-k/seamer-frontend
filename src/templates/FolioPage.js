@@ -12,19 +12,17 @@ const ContentBlockWrapper = styled.div`
   margin: 4rem auto;
 `;
 
-//function GalleryGenerator({ gallery }) {
-//  return (
-//    <>
-//      {gallery.map((image) => (
-//        <GatsbyImage
-//         key={image.asset.id}
-//          alt="yeet"
-//          image={image.asset.gatsbyImageData}
-//        />
-//      ))}
-//    </>
-//  );
-//}
+function ContentBlockChecker({ blocks }) {
+  if (blocks) {
+    return (
+      <ContentBlockWrapper>
+        <BlockContent blocks={blocks} />
+      </ContentBlockWrapper>
+    );
+  } else {
+    return null;
+  }
+}
 
 export default function FolioPage({ data }) {
   const folioPage = data.folioPage;
@@ -36,28 +34,10 @@ export default function FolioPage({ data }) {
         image={heroImage.gatsbyImageData}
         quality={100}
       />
-      <ContentBlockWrapper>
-        {folioPage?._rawFirstContentBlock ? (
-          <BlockContent blocks={folioPage._rawFirstContentBlock} />
-        ) : (
-          ""
-        )}
-      </ContentBlockWrapper>
-      {<GallerySorter gallery={folioPage.Gallery.images} />}
-      <ContentBlockWrapper>
-        {folioPage?._rawMiddleContentBlock ? (
-          <BlockContent blocks={folioPage._rawMiddleContentBlock} />
-        ) : (
-          ""
-        )}
-      </ContentBlockWrapper>
-      <ContentBlockWrapper>
-        {folioPage?._rawEndContentBlock ? (
-          <BlockContent blocks={folioPage._rawEndContentBlock} />
-        ) : (
-          ""
-        )}
-      </ContentBlockWrapper>
+      <ContentBlockChecker blocks={folioPage._rawFirstContentBlock} />
+      <GallerySorter gallery={folioPage?.Gallery?.images.splice(0, 3)} />
+      <ContentBlockChecker blocks={folioPage._rawMiddleContentBlock} />
+      <ContentBlockChecker blocks={folioPage._rawEndContentBlock} />
     </Layout>
   );
 }
