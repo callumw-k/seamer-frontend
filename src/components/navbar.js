@@ -6,20 +6,19 @@ import { css } from "@emotion/react";
 import { centre_content, fontMarginReset } from "./helpers";
 
 const Wrapper = styled.div`
-  padding: 2rem 0;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
+  margin-top: 2rem;
 `;
 
 const Inner = styled.div`
   display: flex;
   align-items: center;
-  background-color: white;
-  padding: 0.25rem 1rem;
-  ${centre_content.lg};
+  padding: 1rem 2rem;
+  ${centre_content.md};
 `;
 
 const Nav = styled.nav`

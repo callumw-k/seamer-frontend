@@ -22,5 +22,5 @@ export default function GallerySorter({ gallery }) {
         ))}
       </ImageGrid>
     );
-  }
+  } else return "";
 }

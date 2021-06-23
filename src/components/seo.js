@@ -17,7 +17,7 @@ const SEO = ({ title, description, image, article, slug }) => {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
-    url: `${siteUrl}${(slug = "/" ? "" : slug)}`,
+    url: `${siteUrl}${slug === "/" ? "" : slug}`,
     siteName,
   };
   return (
@@ -30,7 +30,9 @@ const SEO = ({ title, description, image, article, slug }) => {
       <meta name="image" content={seo.image} />
       <link rel="canonical" href={`${site.siteMetadata.siteUrl}${slug}`} />
       {seo.url && <meta property="og:url" content={seo.url} />}
+      <meta name="robots" content="index, follow" />
       {(article ? true : null) && <meta property="og:type" content="article" />}
+      {seo.siteName && <meta name="og:site_name" content={seo.siteName} />}
       {seo.title && <meta property="og:title" content={seo.title} />}
       {seo.description && (
         <meta property="og:description" content={seo.description} />
@@ -38,7 +40,6 @@ const SEO = ({ title, description, image, article, slug }) => {
       {seo.image && <meta property="og:image" content={seo.image} />}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="og:type" content="website" />
-      {seo.siteName && <meta name="og:site_name" content={seo.siteName} />}
       {/*{twitterUsername && (*/}
       {/*    <meta name="twitter:creator" content={twitterUsername} />*/}
       {/*)}*/}

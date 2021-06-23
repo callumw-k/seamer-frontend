@@ -6,6 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "@emotion/styled";
 import { centre_content } from "../components/helpers";
 import GallerySorter from "./foliopage/gallerySorter";
+import SEO from "../components/seo";
 
 const ContentBlockWrapper = styled.div`
   ${centre_content.lg};
@@ -20,23 +21,30 @@ function ContentBlockChecker({ blocks }) {
       </ContentBlockWrapper>
     );
   } else {
-    return null;
+    return "";
   }
 }
 
-export default function FolioPage({ data }) {
+export default function FolioPage({ data, location }) {
   const folioPage = data.folioPage;
   const heroImage = folioPage?.heroImage?.asset;
+  const seoMeta = folioPage?.SEO;
   return (
     <Layout>
+      <SEO
+        title={seoMeta?.title ? seoMeta.title : folioPage.name}
+        description={seoMeta?.description}
+        slug={location.pathname}
+      />
       <GatsbyImage
         alt={heroImage?.altText ? heroImage.altText : folioPage.name}
         image={heroImage.gatsbyImageData}
         quality={100}
       />
       <ContentBlockChecker blocks={folioPage._rawFirstContentBlock} />
-      <GallerySorter gallery={folioPage?.Gallery?.images.splice(0, 3)} />
+      <GallerySorter gallery={folioPage?.firstGallery?.images} />
       <ContentBlockChecker blocks={folioPage._rawMiddleContentBlock} />
+      <GallerySorter gallery={folioPage?.secondGallery?.images} />
       <ContentBlockChecker blocks={folioPage._rawEndContentBlock} />
     </Layout>
   );
@@ -57,11 +65,29 @@ export const query = graphql`
           altText
         }
       }
-      Gallery {
+      firstGallery {
         images {
           asset {
             gatsbyImageData
             id
+          }
+        }
+      }
+      secondGallery {
+        images {
+          asset {
+            gatsbyImageData
+            id
+          }
+        }
+      }
+      SEO {
+        title: seoTitle
+        description: seoDescription
+        seoImage {
+          asset {
+            id
+            url
           }
         }
       }

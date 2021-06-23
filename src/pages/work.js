@@ -4,22 +4,31 @@ import SEO from "../components/seo";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import FolioItem from "../components/index/folio.components/folio.item";
-import { centre_content } from "../components/helpers";
+import { breakpoints, centre_content } from "../components/helpers";
 import { css } from "@emotion/react";
 
 const WorkInner = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 49%);
+  ${breakpoints.md} {
+    grid-template-columns: repeat(2, 49%);
+  }
   grid-row-gap: 2rem;
   justify-content: space-between;
   ${centre_content.lg}
 `;
 
-const Work = ({ data }) => {
+const Work = ({ data, location }) => {
   const folioInfo = data.allSanityFolio.nodes;
+  const seoMeta = data.workPage.SEO;
+  console.log(location.pathname);
   return (
     <Layout>
-      <SEO />
+      <SEO
+        title={seoMeta.title}
+        description={seoMeta.description}
+        slug={location.pathname}
+      />
+
       <div>
         <WorkInner>
           {folioInfo.map((folioItem) => (
@@ -57,6 +66,17 @@ export const query = graphql`
           asset {
             gatsbyImageData(aspectRatio: 1.7)
             altText
+          }
+        }
+      }
+    }
+    workPage: sanityPages(slug: { current: { eq: "work" } }) {
+      SEO {
+        title: seoTitle
+        description: seoDescription
+        seoImage {
+          asset {
+            id
           }
         }
       }

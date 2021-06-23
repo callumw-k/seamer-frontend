@@ -81,7 +81,13 @@ export default function Layout({ children }) {
     <React.Fragment>
       <Global styles={globalStyles} />
       <Navbar />
-      <main>{children}</main>
+      <main
+        css={css`
+          margin-top: 10rem;
+        `}
+      >
+        {children}
+      </main>
       <Footer />
     </React.Fragment>
   );
