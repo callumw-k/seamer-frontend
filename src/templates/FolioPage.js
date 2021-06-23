@@ -6,7 +6,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "@emotion/styled";
 import { centre_content } from "../components/helpers";
 import GallerySorter from "./foliopage/gallerySorter";
-import SEO from "../components/seo";
+import HeadMeta from "../components/HeadMeta";
 
 const ContentBlockWrapper = styled.div`
   ${centre_content.lg};
@@ -31,7 +31,7 @@ export default function FolioPage({ data, location }) {
   const seoMeta = folioPage?.SEO;
   return (
     <Layout>
-      <SEO
+      <HeadMeta
         title={seoMeta?.title ? seoMeta.title : folioPage.name}
         description={seoMeta?.description}
         slug={location.pathname}

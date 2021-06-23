@@ -1,11 +1,11 @@
 import React from "react";
-import SEO from "../components/seo";
+import HeadMeta from "../components/HeadMeta";
 import Layout from "../components/layout";
 
 export default function ContactPage({ location }) {
   return (
     <Layout>
-      <SEO slug={location.pathname} />
+      <HeadMeta slug={location.pathname} />
       <p>This is the contact page.</p>
     </Layout>
   );

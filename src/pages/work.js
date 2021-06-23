@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import HeadMeta from "../components/HeadMeta";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import FolioItem from "../components/index/folio.components/folio.item";
@@ -23,7 +23,7 @@ const Work = ({ data, location }) => {
   console.log(location.pathname);
   return (
     <Layout>
-      <SEO
+      <HeadMeta
         title={seoMeta.title}
         description={seoMeta.description}
         slug={location.pathname}
