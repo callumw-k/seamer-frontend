@@ -5,7 +5,7 @@ import HomeVideo from "../components/index/home.video";
 import HomeFolio from "../components/index/home.folio";
 import HomeAboutUs from "../components/index/home.about-us";
 import { graphql } from "gatsby";
-import SEO from "../components/seo";
+import HeadMeta from "../components/HeadMeta";
 
 // markup
 const IndexPage = ({ data, location }) => {
@@ -13,7 +13,7 @@ const IndexPage = ({ data, location }) => {
   const indexMeta = data.indexMeta.SEO;
   return (
     <Layout>
-      <SEO
+      <HeadMeta
         title={indexMeta.seoTitle}
         description={indexMeta.seoDescription}
         slug={location.pathname}
