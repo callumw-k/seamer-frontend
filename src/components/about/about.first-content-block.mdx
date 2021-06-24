@@ -1,0 +1,51 @@
+import styled from "@emotion/styled"; import {breakpoints, centre_content} from "../helpers";
+
+export const Gridwrapper = styled.div`
+  ${centre_content.xl};
+  display: grid;
+  ${breakpoints.lg} {
+  grid-template-columns: repeat(3, 1fr);
+}
+  margin: 4rem auto;
+  grid-gap: 2rem;
+`;
+
+export const GridItem = styled.div``;
+
+<Gridwrapper>
+
+<GridItem>
+
+## Better
+
+We offer better because we believe a brand is truly powerful when it visually communicates your values and essence, is relevant to your audience and sends a consistent message.
+
+It needs to tell the story of who you are, what you do and why you do it. It’s why we make getting to know you and your organisation the first point of business.
+
+We use the insights gained through our discussions to develop the strategic blueprint that covers your brand objectives, promise, positioning and brand architecture.
+
+</GridItem>
+
+<GridItem>
+
+## Extra
+
+We deliver extra because we invest. In you. And in your brand.
+
+We create your brand’s fabric by stitching together the right pieces to form a cohesive whole. This ensures the consistent message that delivers on your brand promise, makes its persona visible, gives it gravitas and magnifies its impact.
+
+Our extensive range of creative, technical and project management services, how we work and what we achieve for you, is delivered through our strategic, branding and communication expertise.
+
+</GridItem>
+
+<GridItem>
+
+## Harder
+
+We work harder because we don’t hem in, stitch up or button-down ideas. On the contrary, we’re expansive, giving imagination and thinking the allowance required to craft a stylish, cutting edge finished product.
+
+It means your brand’s great fit, providing the room to move and comfort you feel, and your audience can see. The result: that all-important, go-to, attention-grabbing conversation piece.
+
+</GridItem>
+
+</Gridwrapper>

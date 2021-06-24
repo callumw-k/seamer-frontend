@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
@@ -30,6 +30,20 @@ const Nav = styled.nav`
 `;
 
 const Navbar = () => {
+  const [isVisivle, setIsVisible] = useState(true);
+  function listenToScroll() {
+    let lastpos = 0;
+    let curpos = window.pageYOffset;
+    if (lastpos - curpos < 0) {
+      console.log("yeet");
+    }
+    lastpos = curpos;
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", listenToScroll);
+    return () => window.removeEventListener("scroll", listenToScroll);
+  }, []);
+
   return (
     <Wrapper>
       <Inner>
@@ -52,6 +66,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/work">Work</Link>
+          <Link to="/about">About</Link>
         </Nav>
       </Inner>
     </Wrapper>

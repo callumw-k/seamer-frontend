@@ -34,11 +34,11 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-mdx",
-      options: {
-        defaultLayouts: {
-          default: require.resolve("./src/components/layout.js"),
-        },
-      },
+      // options: {
+      //   defaultLayouts: {
+      //     default: require.resolve("./src/components/layout.js"),
+      //   },
+      // },
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
