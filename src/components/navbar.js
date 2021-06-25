@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { StaticImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
-import { css } from "@emotion/react";
-import { centre_content, fontMarginReset } from "./helpers";
+import { breakpoints, centre_content, fontMarginReset } from "./helpers";
+import MenuIcon from "../images/svgs/menu_icon.svg";
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
@@ -15,14 +15,74 @@ const Wrapper = styled.div`
 `;
 
 const Inner = styled.div`
+  opacity: ${(props) => (props.isVisible ? "1" : "0")};
+  transition: 250ms opacity ease-in;
+  background-color: white;
+  display: grid;
+  align-items: center;
+  padding: 2rem 2rem;
+  ${centre_content.md};
+  ${breakpoints.md} {
+    grid-template-columns: 1fr auto;
+  }
+`;
+
+const imageVisible = `
+    opacity: 1; 
+    height: auto;
+    width: auto;
+    visibility: visible;
+`;
+
+const imageInvisible = `
+    opacity: 0;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+`;
+
+const ImageNavWrapper = styled.div`
+  width: 100%;
   display: flex;
   align-items: center;
-  padding: 1rem 2rem;
-  ${centre_content.md};
+  .first__image,
+  .second__image {
+    transition: opacity 500ms ease-in;
+  }
+  // Check and see if the second logo is visible. if so, remove first image and set second image
+  .first__image {
+    ${(props) => (props.isSecondLogo ? imageInvisible : imageVisible)}
+  }
+  .second__image {
+    ${(props) => (props.isSecondLogo ? imageVisible : imageInvisible)};
+  }
+  .menu__icon {
+    width: 40px;
+    margin-left: auto;
+    ${breakpoints.md} {
+      display: none;
+    }
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  ${(props) =>
+    props.isNavVisibile
+      ? "height: auto; visibility: visible; opacity: 1;padding: 2rem 0;"
+      : ""};
+  flex-direction: column;
+  align-items: center;
+
+  ${breakpoints.md} {
+    flex-direction: row;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
   a {
     padding: 1rem;
     ${fontMarginReset}
@@ -30,15 +90,26 @@ const Nav = styled.nav`
 `;
 
 const Navbar = () => {
-  const [isVisivle, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
+  const [isSecondLogoVisible, setSecondLogo] = useState(false);
+  const [isNavVisible, setNavVisible] = useState(false);
+
+  let scrollPos = 0;
+
   function listenToScroll() {
-    let lastpos = 0;
-    let curpos = window.pageYOffset;
-    if (lastpos - curpos < 0) {
-      console.log("yeet");
+    if (document.body.getBoundingClientRect().top > scrollPos)
+      setIsVisible(true);
+    else {
+      setIsVisible(false);
     }
-    lastpos = curpos;
+    if (document.body.getBoundingClientRect().top < -500) {
+      setSecondLogo(true);
+    } else {
+      setSecondLogo(false);
+    }
+    scrollPos = document.body.getBoundingClientRect().top;
   }
+
   useEffect(() => {
     window.addEventListener("scroll", listenToScroll);
     return () => window.removeEventListener("scroll", listenToScroll);
@@ -46,23 +117,28 @@ const Navbar = () => {
 
   return (
     <Wrapper>
-      <Inner>
-        <div
-          css={css`
-            margin-right: auto;
-          `}
-        >
+      <Inner isVisible={isVisible}>
+        <ImageNavWrapper isSecondLogo={isSecondLogoVisible}>
           <StaticImage
-            css={css`
-              max-width: 150px;
-            `}
+            className=" first__image"
             src="../images/logo/seamer_logo.png"
             alt="Seamer Design logo."
             quality={100}
+            width={150}
           />
-        </div>
+          <StaticImage
+            className="second__image"
+            src="../images/logo/logo_small.png"
+            alt=""
+            width={50}
+          />
+          <MenuIcon
+            className="menu__icon"
+            onClick={() => setNavVisible(!isNavVisible)}
+          />
+        </ImageNavWrapper>
 
-        <Nav>
+        <Nav isNavVisibile={isNavVisible}>
           <Link to="/">Home</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/work">Work</Link>

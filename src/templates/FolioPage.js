@@ -42,9 +42,15 @@ export default function FolioPage({ data, location }) {
         quality={100}
       />
       <ContentBlockChecker blocks={folioPage._rawFirstContentBlock} />
-      <GallerySorter gallery={folioPage?.firstGallery?.images} />
+      <GallerySorter
+        name={folioPage.name}
+        gallery={folioPage?.firstGallery?.images}
+      />
       <ContentBlockChecker blocks={folioPage._rawMiddleContentBlock} />
-      <GallerySorter gallery={folioPage?.secondGallery?.images} />
+      <GallerySorter
+        name={folioPage.name}
+        gallery={folioPage?.secondGallery?.images}
+      />
       <ContentBlockChecker blocks={folioPage._rawEndContentBlock} />
     </Layout>
   );
@@ -68,16 +74,18 @@ export const query = graphql`
       firstGallery {
         images {
           asset {
-            gatsbyImageData
+            gatsbyImageData(aspectRatio: 1.78)
             id
+            altText
           }
         }
       }
       secondGallery {
         images {
           asset {
-            gatsbyImageData
+            gatsbyImageData(aspectRatio: 1.78)
             id
+            altText
           }
         }
       }

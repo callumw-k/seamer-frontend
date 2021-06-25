@@ -4,7 +4,6 @@ import Layout from "../components/layout";
 import { css } from "@emotion/react";
 import SecondContent from "../components/about/about.second-content-block";
 import styled from "@emotion/styled";
-
 const HeaderWrapper = styled.div`
   background-color: #f5f5f4;
   padding: 6rem 0;
@@ -13,7 +12,7 @@ export default function About() {
   return (
     <Layout>
       <HeaderWrapper>
-        <h1
+        <h2
           css={css`
             max-width: 1200px;
             margin-left: clamp(
@@ -27,7 +26,7 @@ export default function About() {
           We’re a collaborative team of strategists, creatives and designers,
           who create, disperse, manage and maintain the branding pieces that
           tell your story.
-        </h1>
+        </h2>
         <Content />
       </HeaderWrapper>
       <SecondContent />

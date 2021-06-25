@@ -4,6 +4,7 @@ import "normalize.css";
 import "../css/variables.css";
 import Footer from "./footer";
 import Navbar from "./navbar";
+import styled from "@emotion/styled";
 
 const globalStyles = css`
   * {
@@ -76,19 +77,17 @@ const globalStyles = css`
   }
 `;
 
-export default function Layout({ children }) {
+const MainStyles = styled.div`
+  margin-top: 12rem;
+`;
+
+export default function Layout({ location, children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
       <Navbar />
-      <main
-        css={css`
-          margin-top: 10rem;
-        `}
-      >
-        {children}
-      </main>
-      <Footer />
+      <MainStyles>{children}</MainStyles>
+      <Footer location={location} />
     </React.Fragment>
   );
 }

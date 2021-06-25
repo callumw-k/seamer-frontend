@@ -4,8 +4,8 @@ import { css } from "@emotion/react";
 import { breakpoints, centre_content } from "./helpers";
 import { StaticImage } from "gatsby-plugin-image";
 
-const Wrapper = css`
-  margin-top: 10rem;
+const Wrapper = styled.section`
+  margin-top: ${(props) => (props.location === "/contact/" ? "0" : "10rem")};
   position: relative;
   &:after {
     content: "";
@@ -100,10 +100,10 @@ const footerInner = css`
   ${centre_content.md};
 `;
 
-export default function Footer() {
+export default function Footer({ location }) {
   return (
     <>
-      <section css={Wrapper}>
+      <Wrapper location={location?.pathname}>
         <div css={formWrapper}>
           <form css={formStyles} action="">
             <DoubleColumn>
@@ -181,7 +181,7 @@ export default function Footer() {
             </p>
           </Details>
         </div>
-      </section>
+      </Wrapper>
       <FooterWrapper>
         <div css={footerInner}>
           <StaticImage
