@@ -4,8 +4,7 @@ import styled from "@emotion/styled";
 import { breakpoints, centre_content } from "../helpers";
 
 const Wrapper = styled.section`
-  margin-top: ${(props) =>
-    props.location === "/contact/" || "/contact" ? "0" : "10rem"};
+  margin-top: 10rem;
   position: relative;
   &:after {
     content: "";

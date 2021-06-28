@@ -21,7 +21,6 @@ const WorkInner = styled.div`
 const Work = ({ data, location }) => {
   const folioInfo = data.allSanityFolio.nodes;
   const seoMeta = data.workPage.SEO;
-  console.log(location.pathname);
   return (
     <Layout>
       <HeadMeta
