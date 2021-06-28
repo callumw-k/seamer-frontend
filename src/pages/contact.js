@@ -2,7 +2,7 @@ import React from "react";
 import HeadMeta from "../components/HeadMeta";
 import Layout from "../components/layout";
 import styled from "@emotion/styled";
-import { breakpoints, centre_content } from "../components/helpers";
+import { centre_content } from "../components/helpers";
 import { graphql } from "gatsby";
 import Hero from "../components/globals/Hero";
 

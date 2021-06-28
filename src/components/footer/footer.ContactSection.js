@@ -1,7 +1,6 @@
 import Form from "../globals/Form";
 import React from "react";
 import styled from "@emotion/styled";
-import { css } from "@emotion/react";
 import { breakpoints, centre_content } from "../helpers";
 
 const Wrapper = styled.section`

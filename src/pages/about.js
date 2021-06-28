@@ -2,7 +2,7 @@ import React from "react";
 import Content from "../components/about/about.first-content-block";
 import Layout from "../components/layout";
 import { css } from "@emotion/react";
-import SecondContent from "../components/about/about.second-content-block";
+import SecondContentBlock from "../components/about/about.second-content-block";
 import styled from "@emotion/styled";
 const HeaderWrapper = styled.div`
   background-color: #f5f5f4;
@@ -29,7 +29,7 @@ export default function About() {
         </h2>
         <Content />
       </HeaderWrapper>
-      <SecondContent />
+      <SecondContentBlock />
     </Layout>
   );
 }

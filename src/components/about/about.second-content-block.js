@@ -28,7 +28,7 @@ const GridItem = styled.div`
 const Content = styled.div`
   order: 1;
 `;
-export default function () {
+export default function SecondContentBlock() {
   return (
     <Wrapper>
       <h2>

@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import { breakpoints, centre_content } from "./helpers";
+import { centre_content } from "./helpers";
 import { StaticImage } from "gatsby-plugin-image";
-import Form from "./globals/Form";
 import ContactSection from "./footer/footer.ContactSection";
 
 const FooterWrapper = styled.footer`
