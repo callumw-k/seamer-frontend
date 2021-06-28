@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 import FolioItem from "../components/index/folio.components/folio.item";
 import { breakpoints, centre_content } from "../components/helpers";
 import { css } from "@emotion/react";
+import Hero from "../components/globals/Hero";
 
 const WorkInner = styled.div`
   display: grid;
@@ -29,6 +30,7 @@ const Work = ({ data, location }) => {
         slug={location.pathname}
       />
 
+      <Hero width={"lg"} title="Our Work" description="Made to Work" />
       <div>
         <WorkInner>
           {folioInfo.map((folioItem) => (

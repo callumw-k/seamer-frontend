@@ -21,7 +21,13 @@ export default function ContactPage({ location, data }) {
         description={pageMeta.description}
         slug={location.pathname}
       />
-      <Hero />
+      <Hero
+        title={"Hello."}
+        description={
+          "We’d love to hear from you. Get in touch and let’s make brand work, together."
+        }
+        width={"md"}
+      />
       {/*<Wrapper>*/}
       {/*  <h1*/}
       {/*    css={css`*/}
