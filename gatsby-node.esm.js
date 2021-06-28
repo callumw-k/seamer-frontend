@@ -25,6 +25,32 @@ async function turnFolioItemsIntoPages({ graphql, actions }) {
   });
 }
 
+async function turnBlogPostIntoPages({ graphql, actions }) {
+  const blogPageTemplate = path.resolve("./src/templates/BlogPage.js");
+  const { data } = await graphql(`
+    {
+      allPosts: allSanityPost {
+        nodes {
+          name
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `);
+  data.allPosts.nodes.forEach((blogPage) => {
+    actions.createPage({
+      path: `blog/${blogPage.slug.current}`,
+      component: blogPageTemplate,
+      context: {
+        slug: blogPage.slug.current,
+      },
+    });
+  });
+}
+
 export async function createPages(params) {
   await turnFolioItemsIntoPages(params);
+  await turnBlogPostIntoPages(params);
 }
