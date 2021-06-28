@@ -7,8 +7,8 @@ import CommunicationsIcon from "../../images/svgs/strategy-icon.svg";
 import Digital from "../../images/svgs/digital-icon.svg";
 //Wrapper styles
 const wrapperStyles = css`
-  ${centre_content.md};
-  margin: 4rem auto;
+  ${centre_content.lg};
+  margin: 12rem auto;
 `;
 
 //Main heading styles.
@@ -17,11 +17,11 @@ const mainH2Styles = css`
 `;
 
 //HR Divider between main heading and expertise lists
-const hrStyles = css`
-  border: 2px solid black;
-  width: 4rem;
-  margin: 2rem 0;
-`;
+// const hrStyles = css`
+//   border: 2px solid black;
+//   width: 4rem;
+//   margin: 2rem 0;
+// `;
 
 //Grid Wrapper
 const GridWrapper = styled.div`
@@ -127,19 +127,19 @@ export default function HomeAboutUs() {
           </ul>
         </GridItem>
         <GridItem>
-          <StrategyIcon css={css(IconStyles)} />
-          <h3>Communications</h3>
+          <Digital css={css(IconStyles)} />
+          <h3>Digital</h3>
           <ul>
-            {expertiseInfo.communications.map((listItem) => (
+            {expertiseInfo.digital.map((listItem) => (
               <li key={listItem}>{listItem}</li>
             ))}
           </ul>
         </GridItem>
         <GridItem>
-          <Digital css={css(IconStyles)} />
-          <h3>Digital</h3>
+          <StrategyIcon css={css(IconStyles)} />
+          <h3>Communications</h3>
           <ul>
-            {expertiseInfo.digital.map((listItem) => (
+            {expertiseInfo.communications.map((listItem) => (
               <li key={listItem}>{listItem}</li>
             ))}
           </ul>

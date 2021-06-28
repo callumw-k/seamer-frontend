@@ -140,9 +140,9 @@ const Navbar = () => {
 
         <Nav isNavVisibile={isNavVisible}>
           <Link to="/">Home</Link>
-          <Link to="/contact">Contact</Link>
           <Link to="/work">Work</Link>
           <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </Nav>
       </Inner>
     </Wrapper>

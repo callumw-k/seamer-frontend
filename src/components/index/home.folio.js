@@ -2,7 +2,12 @@ import React from "react";
 import FolioItem from "./folio.components/folio.item";
 import FolioDouble from "./folio.components/folio.double";
 import FolioSingle from "./folio.components/folio.single";
+import styled from "@emotion/styled";
 
+const FolioWrapper = styled.section`
+  max-width: 1900px;
+  margin: 12rem auto;
+`;
 function FolioItemGenerator({ folioItem, single }) {
   return (
     <FolioItem
@@ -19,7 +24,7 @@ function FolioItemGenerator({ folioItem, single }) {
 
 export default function HomeFolio({ folioItems }) {
   return (
-    <section>
+    <FolioWrapper>
       <FolioDouble>
         {folioItems.slice(0, 2).map((folioItem) => {
           return (
@@ -41,6 +46,6 @@ export default function HomeFolio({ folioItems }) {
           );
         })}
       </FolioDouble>
-    </section>
+    </FolioWrapper>
   );
 }

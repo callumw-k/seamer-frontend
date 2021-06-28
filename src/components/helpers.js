@@ -11,6 +11,7 @@ export const centre_content = {
   md: `margin: 0 auto; width: 90%; max-width: 1024px;`,
   lg: `margin: 0 auto; width: 90%; max-width: 1280px;`,
   xl: `margin: 0 auto; width: 90%; max-width: 1564px;`,
+  md_no_margin: ` width: 90%; max-width: 1024px;`,
 };
 
 export const fontMarginReset = `

@@ -6,16 +6,17 @@ import HomeFolio from "../components/index/home.folio";
 import HomeAboutUs from "../components/index/home.about-us";
 import { graphql } from "gatsby";
 import HeadMeta from "../components/HeadMeta";
+import ClientLogos from "../components/index/home.ClientLogo";
 
 // markup
 const IndexPage = ({ data, location }) => {
   const folioItems = data.folioItems.nodes;
-  const indexMeta = data.indexMeta.SEO;
+  const pageMeta = data.pageMeta.SEO;
   return (
     <Layout>
       <HeadMeta
-        title={indexMeta.seoTitle}
-        description={indexMeta.seoDescription}
+        title={pageMeta.seoTitle}
+        description={pageMeta.seoDescription}
         slug={location.pathname}
       />
       <HomeHero
@@ -29,6 +30,7 @@ const IndexPage = ({ data, location }) => {
       <HomeVideo />
       <HomeAboutUs />
       <HomeFolio folioItems={folioItems} />
+      <ClientLogos />
     </Layout>
   );
 };
@@ -55,7 +57,7 @@ export const query = graphql`
         type
       }
     }
-    indexMeta: sanityPages(name: { eq: "Index" }) {
+    pageMeta: sanityPages(name: { eq: "Index" }) {
       SEO {
         seoTitle
         seoDescription

@@ -5,7 +5,8 @@ import { breakpoints, centre_content } from "./helpers";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Wrapper = styled.section`
-  margin-top: ${(props) => (props.location === "/contact/" ? "0" : "10rem")};
+  margin-top: ${(props) =>
+    props.location === "/contact/" || "/contact" ? "0" : "10rem"};
   position: relative;
   &:after {
     content: "";
