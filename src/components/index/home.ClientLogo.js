@@ -11,6 +11,7 @@ const ComponentWrapper = styled.section`
   ${centre_content.lg};
   margin: 8rem auto;
 `;
+
 const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 20%);
@@ -24,6 +25,7 @@ export default function ClientLogos() {
     {
       allFile(filter: { relativeDirectory: { eq: "client-logos" } }) {
         nodes {
+          id
           childImageSharp {
             gatsbyImageData(layout: CONSTRAINED)
           }
@@ -38,7 +40,7 @@ export default function ClientLogos() {
       <GridWrapper>
         {images.map((image) => (
           <GatsbyImage
-            id={image.id}
+            key={image.id}
             alt=""
             imgStyle={{ objectFit: "contain" }}
             image={image.childImageSharp.gatsbyImageData}
