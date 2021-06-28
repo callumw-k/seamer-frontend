@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   ${breakpoints.max_md} {
-    & > div:first-child {
+    & > div:first-of-type {
       margin-bottom: 4rem;
     }
   }
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
       flex-basis: 48%;
     }
 
-    &>div: ${(props) => (props.staggered ? "last-child" : "first-child")} {
+    &>div: ${(props) => (props.staggered ? "last-child" : "first-of-type")} {
       margin-top: 4rem;
     }
   } ;
