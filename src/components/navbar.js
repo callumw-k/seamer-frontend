@@ -21,7 +21,7 @@ const Inner = styled.div`
   display: grid;
   align-items: center;
   padding: 2rem 2rem;
-  ${centre_content.md};
+  ${centre_content.lg};
   ${breakpoints.md} {
     grid-template-columns: 1fr auto;
   }
