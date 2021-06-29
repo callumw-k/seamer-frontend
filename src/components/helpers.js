@@ -11,6 +11,8 @@ export const centre_content = {
   md: `margin: 0 auto; width: 90%; max-width: 1024px;`,
   lg: `margin: 0 auto; width: 90%; max-width: 1280px;`,
   xl: `margin: 0 auto; width: 90%; max-width: 1564px;`,
+  xxl: `margin: 0 auto; width: 90%; max-width: 1800px;`,
+  xxxl: `margin: 0 auto; width: 90%; max-width: 2100px;`,
   md_no_margin: ` width: 90%; max-width: 1024px;`,
 };
 

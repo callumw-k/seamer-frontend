@@ -8,7 +8,7 @@ import Digital from "../../images/svgs/digital-icon.svg";
 //Wrapper styles
 const wrapperStyles = css`
   ${centre_content.lg};
-  margin: 12rem auto;
+  margin: var(--marginSpacingLarge);
 `;
 
 //Main heading styles.

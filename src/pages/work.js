@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import HeadMeta from "../components/HeadMeta";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
-import FolioItem from "../components/index/folio.components/folio.item";
+import MediaCard from "../components/globals/MediaCard";
 import { breakpoints, centre_content } from "../components/helpers";
 import { css } from "@emotion/react";
 import Hero from "../components/globals/Hero";
@@ -15,7 +15,7 @@ const WorkInner = styled.div`
   }
   grid-row-gap: 2rem;
   justify-content: space-between;
-  ${centre_content.lg}
+  ${centre_content.xxxl}
 `;
 
 const Work = ({ data, location }) => {
@@ -30,25 +30,23 @@ const Work = ({ data, location }) => {
       />
 
       <Hero width={"lg"} title="Our Work" description="Made to Work" />
-      <div>
-        <WorkInner>
-          {folioInfo.map((folioItem) => (
-            <FolioItem
-              key={folioItem._id}
-              title={folioItem.name}
-              image={folioItem.heroImage.asset.gatsbyImageData}
-              url={folioItem.slug.current}
-              single
-              subtitle={folioItem.subtitle}
-              extendStyles={css`
-                h3 {
-                  font-size: var(--h3);
-                }
-              `}
-            />
-          ))}
-        </WorkInner>
-      </div>
+      <WorkInner>
+        {folioInfo.map((folioItem) => (
+          <MediaCard
+            key={folioItem._id}
+            title={folioItem.name}
+            image={folioItem.heroImage.asset.gatsbyImageData}
+            url={folioItem.slug.current}
+            single
+            subtitle={folioItem.subtitle}
+            extendStyles={css`
+              h3 {
+                font-size: var(--h3);
+              }
+            `}
+          />
+        ))}
+      </WorkInner>
     </Layout>
   );
 };
@@ -65,7 +63,7 @@ export const query = graphql`
         subtitle
         heroImage {
           asset {
-            gatsbyImageData(aspectRatio: 1.7)
+            gatsbyImageData(aspectRatio: 1.3)
             altText
           }
         }

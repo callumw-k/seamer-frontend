@@ -57,7 +57,7 @@ const ImageNavWrapper = styled.div`
     ${(props) => (props.isSecondLogo ? imageVisible : imageInvisible)};
   }
   .menu__icon {
-    width: 40px;
+    width: 30px;
     margin-left: auto;
     ${breakpoints.md} {
       display: none;
@@ -89,7 +89,7 @@ const Nav = styled.nav`
   }
 `;
 
-const Navbar = () => {
+const Navbar_bak = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isSecondLogoVisible, setSecondLogo] = useState(false);
   const [isNavVisible, setNavVisible] = useState(false);
@@ -141,6 +141,7 @@ const Navbar = () => {
         <Nav isNavVisibile={isNavVisible}>
           <Link to="/">Home</Link>
           <Link to="/work">Work</Link>
+          <Link to="/news">News</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </Nav>
@@ -149,4 +150,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar_bak;

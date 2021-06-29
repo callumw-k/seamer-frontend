@@ -2,7 +2,7 @@ import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { breakpoints } from "../../helpers";
+import { breakpoints } from "../helpers";
 import { Link } from "gatsby";
 
 const ContentWrapper = styled.div`
@@ -17,12 +17,12 @@ const smallTextStyling = css`
   margin-bottom: 0.5rem;
 `;
 const titleStyling = css`
-  margin-top: 0;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: var(--h2);
 `;
 
-export default function FolioItem({
+export default function MediaCard({
   alt,
   image,
   type,
@@ -36,11 +36,11 @@ export default function FolioItem({
     <div>
       <GatsbyImage image={image} alt={alt ? alt : title} />
       <ContentWrapper css={extendStyles} single={single}>
-        <p css={smallTextStyling}>{type}</p>
+        {type ? <p css={smallTextStyling}>{type}</p> : ""}
         <Link to={url}>
           <h3 css={titleStyling}>{title}</h3>
         </Link>
-        <p>{subtitle}</p>
+        {subtitle ? <p>{subtitle}</p> : ""}
       </ContentWrapper>
     </div>
   );

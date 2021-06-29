@@ -8,16 +8,16 @@ const ComponentWrapper = styled.section`
   h2 {
     margin-bottom: 4rem;
   }
-  ${centre_content.lg};
-  margin: 8rem auto;
+  ${centre_content.xxxl};
 `;
 
 const GridWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 20%);
+  grid-template-columns: repeat(5, 10%);
   grid-auto-rows: minmax(50px, 100px);
   justify-content: space-between;
   grid-row-gap: 4rem;
+  padding: 0 2rem;
 `;
 
 export default function ClientLogos() {

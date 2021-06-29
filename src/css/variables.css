@@ -50,6 +50,13 @@
 
     --linkColor: var(--black);
 
+    /* Margin Spacing for Layouts*/
+
+    --marginSpacingLarge: 8rem auto;
+    --marginSpacingMedium: 4rem auto;
+    --marginSpacingXL: 12rem auto;
+
+    --layoutXXXLarge: 2100px;
 }
 
 @media screen and (min-width: 1024px) {

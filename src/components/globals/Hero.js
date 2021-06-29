@@ -1,39 +1,59 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { breakpoints, centre_content, fontMarginReset } from "../helpers";
+import { css } from "@emotion/react";
 
 const HeroSection = styled.div`
   display: flex;
   flex-direction: column;
-  ${(props) => (props.width === "md" ? centre_content.md : centre_content.lg)};
-  margin: 4rem auto;
+  ${(props) =>
+    props.width === "md" ? centre_content.md : centre_content.xxxl};
+  margin: var(--marginSpacingLarge);
   ${breakpoints.md} {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 
-  h1 {
-    font-weight: var(--fontExtraBold);
-    font-size: var(--biggerHeading);
-    ${fontMarginReset};
-    ${breakpoints.md} {
-      margin-right: auto;
-    }
-  }
-
   h2 {
-    ${fontMarginReset};
-    font-size: var(--h4);
-    max-width: 60%;
+    font-size: var(--h3);
+    ${breakpoints.md} {
+      ${fontMarginReset};
+      flex-basis: 50%;
+    }
   }
 `;
 
-export default function Hero({ title, description, width }) {
+const LeftContent = styled.div`
+  ${breakpoints.md} {
+    flex-basis: 48%;
+  }
+
+  h1 {
+    word-break: break-word;
+    font-weight: var(--fontExtraBold);
+    font-size: var(--jumboHeading);
+    ${breakpoints.md} {
+      ${fontMarginReset};
+    }
+  }
+`;
+export default function Hero({ title, description, width, subtitle }) {
   return (
     <HeroSection width={width}>
-      <h1>{title}</h1>
-      <h2> {description}</h2>
+      <LeftContent>
+        {subtitle && (
+          <p
+            css={css`
+              font-size: var(--smallText);
+            `}
+          >
+            {subtitle}
+          </p>
+        )}
+        <h1>{title}</h1>
+      </LeftContent>
+      {description && <h2>{description}</h2>}
     </HeroSection>
   );
 }

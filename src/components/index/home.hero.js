@@ -15,7 +15,7 @@ export default function HomeHero(props) {
     flex-direction: column;
     height: 50vh;
     justify-content: center;
-    ${centre_content.lg};
+    ${centre_content.xxxl};
     ${breakpoints.md} {
       height: 60vh;
       flex-direction: row;
@@ -27,7 +27,7 @@ export default function HomeHero(props) {
       ${breakpoints.md} {
         font-size: var(--jumboHeading);
         font-weight: var(--fontExtraBold);
-        flex-basis: 40%;
+        flex-basis: 48%;
       }
     }
     h2 {
@@ -40,7 +40,7 @@ export default function HomeHero(props) {
 
   const RightFlexBox = styled.div`
     ${breakpoints.md} {
-      flex-basis: 40%;
+      flex-basis: 50%;
     }
   `;
 

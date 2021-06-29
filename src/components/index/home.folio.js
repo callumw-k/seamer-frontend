@@ -1,16 +1,16 @@
 import React from "react";
-import FolioItem from "./folio.components/folio.item";
+import MediaCard from "../globals/MediaCard";
 import FolioDouble from "./folio.components/folio.double";
 import FolioSingle from "./folio.components/folio.single";
 import styled from "@emotion/styled";
 
 const FolioWrapper = styled.section`
-  max-width: 1900px;
-  margin: 12rem auto;
+  max-width: 2100px;
+  margin: var(--marginSpacingLarge);
 `;
 function FolioItemGenerator({ folioItem, single }) {
   return (
-    <FolioItem
+    <MediaCard
       image={folioItem.heroImage.asset.gatsbyImageData}
       alt={folioItem.heroImage.asset.altText}
       type={folioItem.type}

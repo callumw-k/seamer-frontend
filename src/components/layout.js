@@ -3,7 +3,7 @@ import { css, Global } from "@emotion/react";
 import "normalize.css";
 import "../css/variables.css";
 import Footer from "./footer";
-import Navbar from "./navbar";
+import Header from "./Header";
 import styled from "@emotion/styled";
 
 const globalStyles = css`
@@ -77,15 +77,15 @@ const globalStyles = css`
   }
 `;
 
-const MainStyles = styled.div`
-  margin-top: 12rem;
+const MainStyles = styled.main`
+  padding-top: 99px;
 `;
 
 export default function Layout({ location, children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
-      <Navbar />
+      <Header />
       <MainStyles>{children}</MainStyles>
       <Footer location={location} />
     </React.Fragment>

@@ -7,9 +7,10 @@ import styled from "@emotion/styled";
 import { centre_content } from "../components/helpers";
 import GallerySorter from "./foliopage/gallerySorter";
 import HeadMeta from "../components/HeadMeta";
+import Hero from "../components/globals/Hero";
 
 const ContentBlockWrapper = styled.div`
-  ${centre_content.lg};
+  ${centre_content.xl};
   margin: 4rem auto;
 `;
 
@@ -36,6 +37,7 @@ export default function FolioPage({ data, location }) {
         description={seoMeta?.description}
         slug={location.pathname}
       />
+      <Hero title={folioPage.name} subtitle={folioPage.subtitle} />
       <GatsbyImage
         alt={heroImage?.altText ? heroImage.altText : folioPage.name}
         image={heroImage.gatsbyImageData}

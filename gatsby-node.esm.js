@@ -41,7 +41,7 @@ async function turnBlogPostIntoPages({ graphql, actions }) {
   `);
   data.allPosts.nodes.forEach((blogPage) => {
     actions.createPage({
-      path: `blog/${blogPage.slug.current}`,
+      path: `work/${blogPage.slug.current}`,
       component: blogPageTemplate,
       context: {
         slug: blogPage.slug.current,
