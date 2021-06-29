@@ -16,7 +16,7 @@ const footerInner = css`
 
 export default function Footer({ location }) {
   return (
-    <>
+    <React.Fragment>
       <ContactSection location={location} />
       <FooterWrapper>
         <div css={footerInner}>
@@ -34,6 +34,6 @@ export default function Footer({ location }) {
           />
         </div>
       </FooterWrapper>
-    </>
+    </React.Fragment>
   );
 }
