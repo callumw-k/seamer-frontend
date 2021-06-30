@@ -4,7 +4,11 @@ import { graphql } from "gatsby";
 import BlockContent from "@sanity/block-content-to-react";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "@emotion/styled";
-import { centre_content } from "../components/helpers";
+import {
+  breakpoints,
+  centre_content,
+  fontMarginReset,
+} from "../components/helpers";
 import GallerySorter from "./foliopage/gallerySorter";
 import HeadMeta from "../components/HeadMeta";
 import Hero from "../components/globals/Hero";
@@ -12,21 +16,39 @@ import Hero from "../components/globals/Hero";
 const ContentBlockWrapper = styled.div`
   ${centre_content.xl};
   margin: 4rem auto;
+  ${breakpoints.lg} {
+    display: grid;
+    grid-template-columns: 48% 50%;
+    justify-content: space-between;
+    h3 {
+      ${fontMarginReset};
+    }
+  }
 `;
 
-function ContentBlockChecker({ blocks }) {
-  if (blocks) {
+const Paragraph = styled.div`
+  flex-basis: 50%;
+  & p:first-of-type {
+    margin-top: 0;
+  }
+`;
+
+function ContentBlockGenerator({ block }) {
+  if (block.title && block.content) {
     return (
       <ContentBlockWrapper>
-        <BlockContent blocks={blocks} />
+        <h3>{block.title}</h3>
+        <Paragraph>
+          <BlockContent blocks={block.content} />
+        </Paragraph>
       </ContentBlockWrapper>
     );
   } else {
-    return "";
+    return null;
   }
 }
 
-export default function FolioPage({ data, location }) {
+export default function ClientPage({ data, location }) {
   const folioPage = data.folioPage;
   const heroImage = folioPage?.heroImage?.asset;
   const seoMeta = folioPage?.SEO;
@@ -43,17 +65,23 @@ export default function FolioPage({ data, location }) {
         image={heroImage.gatsbyImageData}
         quality={100}
       />
-      <ContentBlockChecker blocks={folioPage._rawFirstContentBlock} />
+      {folioPage.firstContent && (
+        <ContentBlockGenerator block={folioPage.firstContent} />
+      )}
       <GallerySorter
         name={folioPage.name}
         gallery={folioPage?.firstGallery?.images}
       />
-      <ContentBlockChecker blocks={folioPage._rawMiddleContentBlock} />
+      {folioPage.secondContent && (
+        <ContentBlockGenerator block={folioPage.secondContent} />
+      )}
       <GallerySorter
         name={folioPage.name}
         gallery={folioPage?.secondGallery?.images}
       />
-      <ContentBlockChecker blocks={folioPage._rawEndContentBlock} />
+      {folioPage.thirdContent && (
+        <ContentBlockGenerator block={folioPage.thirdContent} />
+      )}
     </Layout>
   );
 }
@@ -64,14 +92,23 @@ export const query = graphql`
       name
       subtitle
       type
-      _rawFirstContentBlock
-      _rawEndContentBlock
-      _rawMiddleContentBlock
       heroImage {
         asset {
           gatsbyImageData(layout: FULL_WIDTH)
           altText
         }
+      }
+      firstContent {
+        title
+        content: _rawContentBlock
+      }
+      secondContent {
+        title
+        content: _rawContentBlock
+      }
+      thirdContent {
+        title
+        content: _rawContentBlock
       }
       firstGallery {
         images {

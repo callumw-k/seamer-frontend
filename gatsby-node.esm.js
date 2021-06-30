@@ -1,7 +1,7 @@
 import path from "path";
 
 async function turnFolioItemsIntoPages({ graphql, actions }) {
-  const folioPageTemplate = path.resolve("./src/templates/FolioPage.js");
+  const clientPageTemplate = path.resolve("./src/templates/ClientPage.js");
   const { data } = await graphql(`
     query {
       folioPages: allSanityFolio {
@@ -14,12 +14,12 @@ async function turnFolioItemsIntoPages({ graphql, actions }) {
       }
     }
   `);
-  data.folioPages.nodes.forEach((folioPage) => {
+  data.folioPages.nodes.forEach((clientPage) => {
     actions.createPage({
-      path: `work/${folioPage.slug.current}`,
-      component: folioPageTemplate,
+      path: `work/${clientPage.slug.current}`,
+      component: clientPageTemplate,
       context: {
-        slug: folioPage.slug.current,
+        slug: clientPage.slug.current,
       },
     });
   });

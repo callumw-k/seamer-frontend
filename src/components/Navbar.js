@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import { breakpoints, centre_content } from "./helpers";
