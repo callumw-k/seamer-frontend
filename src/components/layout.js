@@ -79,6 +79,7 @@ const globalStyles = css`
 `;
 
 const MainStyles = styled.main`
+  background-color: white;
   // padding-top: 80px;
   // ${breakpoints.md} {
   //   padding-top: 90px;

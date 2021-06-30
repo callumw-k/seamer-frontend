@@ -5,7 +5,13 @@ const Wrapper = styled.footer`
   position: fixed;
   bottom: 0;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export default function Footer() {
   return (
