@@ -20,15 +20,12 @@ const HeroSection = styled.div`
     ${breakpoints.md} {
       ${fontMarginReset};
       flex-basis: 50%;
+      margin-left: 2%;
     }
   }
 `;
 
 const LeftContent = styled.div`
-  ${breakpoints.md} {
-    flex-basis: 48%;
-  }
-
   h1 {
     word-break: break-word;
     font-weight: var(--fontExtraBold);
