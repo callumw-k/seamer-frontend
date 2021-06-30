@@ -4,7 +4,7 @@ async function turnFolioItemsIntoPages({ graphql, actions }) {
   const clientPageTemplate = path.resolve("./src/templates/ClientPage.js");
   const { data } = await graphql(`
     query {
-      folioPages: allSanityFolio {
+      clients: allSanityClients {
         nodes {
           name
           slug {
@@ -14,12 +14,12 @@ async function turnFolioItemsIntoPages({ graphql, actions }) {
       }
     }
   `);
-  data.folioPages.nodes.forEach((clientPage) => {
+  data.clients.nodes.forEach((client) => {
     actions.createPage({
-      path: `work/${clientPage.slug.current}`,
+      path: `work/${client.slug.current}`,
       component: clientPageTemplate,
       context: {
-        slug: clientPage.slug.current,
+        slug: client.slug.current,
       },
     });
   });

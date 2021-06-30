@@ -33,9 +33,9 @@ const Nav = styled.nav`
   }
 `;
 export default function Navbar({ isOpen }) {
-  function checkHeight(payload) {
-    console.log(payload);
-  }
+  // function checkHeight(payload) {
+  //   console.log(payload);
+  // }
 
   return (
     <Wrapper id="header" isOpen={isOpen}>
