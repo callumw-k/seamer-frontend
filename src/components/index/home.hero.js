@@ -13,11 +13,10 @@ export default function HomeHero(props) {
   const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
-    height: 50vh;
     justify-content: center;
     ${centre_content.xxxl};
+    margin: var(--marginSpacingLarge);
     ${breakpoints.md} {
-      height: 60vh;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
