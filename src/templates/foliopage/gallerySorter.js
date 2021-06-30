@@ -8,13 +8,14 @@ const ImageGrid = styled.div`
   grid-template-columns: 1fr;
   grid-gap: 1rem 1rem;
 
-  width: ${(props) => props.length};
   ${breakpoints.md} {
     grid-template-columns: 50% 50%;
-    ${centre_content.xl};
+
     & > div:first-of-type {
       grid-column: ${(props) => (props.length ? "1/3" : "1/2")};
     }
+
+    ${centre_content.xl};
   }
 `;
 export default function GallerySorter({ gallery, name }) {
