@@ -49,38 +49,38 @@ function ContentBlockGenerator({ block }) {
 }
 
 export default function ClientPage({ data, location }) {
-  const folioPage = data.folioPage;
-  const heroImage = folioPage?.heroImage?.asset;
-  const seoMeta = folioPage?.SEO;
+  const clientPage = data.clientPage;
+  const heroImage = clientPage?.heroImage?.asset;
+  const seoMeta = clientPage?.SEO;
   return (
     <Layout>
       <HeadMeta
-        title={seoMeta?.title ? seoMeta.title : folioPage.name}
+        title={seoMeta?.title ? seoMeta.title : clientPage.name}
         description={seoMeta?.description}
         slug={location.pathname}
       />
-      <Hero title={folioPage.name} subtitle={folioPage.subtitle} />
+      <Hero title={clientPage.name} subtitle={clientPage.subtitle} />
       <GatsbyImage
-        alt={heroImage?.altText ? heroImage.altText : folioPage.name}
+        alt={heroImage?.altText ? heroImage.altText : clientPage.name}
         image={heroImage.gatsbyImageData}
         quality={100}
       />
-      {folioPage.firstContent && (
-        <ContentBlockGenerator block={folioPage.firstContent} />
+      {clientPage.firstContent && (
+        <ContentBlockGenerator block={clientPage.firstContent} />
       )}
       <GallerySorter
-        name={folioPage.name}
-        gallery={folioPage?.firstGallery?.images}
+        name={clientPage.name}
+        gallery={clientPage?.firstGallery?.images}
       />
-      {folioPage.secondContent && (
-        <ContentBlockGenerator block={folioPage.secondContent} />
+      {clientPage.secondContent && (
+        <ContentBlockGenerator block={clientPage.secondContent} />
       )}
       <GallerySorter
-        name={folioPage.name}
-        gallery={folioPage?.secondGallery?.images}
+        name={clientPage.name}
+        gallery={clientPage?.secondGallery?.images}
       />
-      {folioPage.thirdContent && (
-        <ContentBlockGenerator block={folioPage.thirdContent} />
+      {clientPage.thirdContent && (
+        <ContentBlockGenerator block={clientPage.thirdContent} />
       )}
     </Layout>
   );
@@ -88,7 +88,7 @@ export default function ClientPage({ data, location }) {
 
 export const query = graphql`
   query ($slug: String!) {
-    folioPage: sanityFolio(slug: { current: { eq: $slug } }) {
+    clientPage: sanityClients(slug: { current: { eq: $slug } }) {
       name
       subtitle
       type

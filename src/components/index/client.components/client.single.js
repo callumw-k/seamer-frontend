@@ -9,6 +9,6 @@ const Wrapper = styled.div`
   }
 `;
 
-export default function FolioSingle({ children }) {
+export default function ClientSingle({ children }) {
   return <Wrapper>{children}</Wrapper>;
 }

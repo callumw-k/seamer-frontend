@@ -25,6 +25,6 @@ const Wrapper = styled.div`
   } ;
 `;
 
-export default function FolioDouble({ staggered, children }) {
+export default function ClientDouble({ staggered, children }) {
   return <Wrapper staggered={staggered}>{children}</Wrapper>;
 }

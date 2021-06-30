@@ -19,7 +19,7 @@ const WorkInner = styled.div`
 `;
 
 const Work = ({ data, location }) => {
-  const folioInfo = data.allSanityFolio.nodes;
+  const clients = data.clients.nodes;
   const seoMeta = data.workPage.SEO;
   return (
     <Layout>
@@ -31,14 +31,14 @@ const Work = ({ data, location }) => {
 
       <Hero width={"lg"} title="Our Work" description="Made to Work" />
       <WorkInner>
-        {folioInfo.map((folioItem) => (
+        {clients.map((client) => (
           <MediaCard
-            key={folioItem._id}
-            title={folioItem.name}
-            image={folioItem.heroImage.asset.gatsbyImageData}
-            url={folioItem.slug.current}
+            key={client._id}
+            title={client.name}
+            image={client.heroImage.asset.gatsbyImageData}
+            url={client.slug.current}
             single
-            subtitle={folioItem.subtitle}
+            subtitle={client.subtitle}
             extendStyles={css`
               h3 {
                 font-size: var(--h3);
@@ -53,7 +53,7 @@ const Work = ({ data, location }) => {
 
 export const query = graphql`
   {
-    allSanityFolio(sort: { fields: _createdAt }) {
+    clients: allSanityClients(sort: { fields: _createdAt }) {
       nodes {
         _id
         name

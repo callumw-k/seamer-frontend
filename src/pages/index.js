@@ -2,7 +2,7 @@ import * as React from "react";
 import Layout from "../components/layout";
 import HomeHero from "../components/index/home.hero";
 import HomeVideo from "../components/index/home.video";
-import HomeFolio from "../components/index/home.folio";
+import HomeClients from "../components/index/home.clients";
 import HomeAboutUs from "../components/index/home.about-us";
 import { graphql } from "gatsby";
 import HeadMeta from "../components/HeadMeta";
@@ -10,7 +10,7 @@ import ClientLogos from "../components/index/home.ClientLogo";
 
 // markup
 const IndexPage = ({ data, location }) => {
-  const folioItems = data.folioItems.nodes;
+  const clients = data.clients.nodes;
   const pageMeta = data.pageMeta.SEO;
   return (
     <Layout>
@@ -29,7 +29,7 @@ const IndexPage = ({ data, location }) => {
       />
       <HomeVideo />
       <HomeAboutUs />
-      <HomeFolio folioItems={folioItems} />
+      <HomeClients clients={clients} />
       <ClientLogos />
     </Layout>
   );
@@ -37,7 +37,7 @@ const IndexPage = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    folioItems: allSanityFolio(
+    clients: allSanityClients(
       sort: { order: ASC, fields: _createdAt }
       limit: 5
     ) {
