@@ -15,7 +15,7 @@ export default function HomeHero(props) {
     flex-direction: column;
     justify-content: center;
     ${centre_content.xxxl};
-    margin: var(--marginSpacingLarge);
+    padding: 8rem 0;
     ${breakpoints.md} {
       flex-direction: row;
       justify-content: space-between;

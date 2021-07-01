@@ -5,7 +5,6 @@ import "../css/variables.css";
 import Footer from "./footer";
 import Header from "./Header";
 import styled from "@emotion/styled";
-import { breakpoints } from "./helpers";
 
 const globalStyles = css`
   * {
@@ -80,10 +79,8 @@ const globalStyles = css`
 
 const MainStyles = styled.main`
   background-color: white;
-  // padding-top: 80px;
-  // ${breakpoints.md} {
-  //   padding-top: 90px;
-  // }
+  margin-bottom: 100vh;
+  padding-bottom: 4rem;
 `;
 
 export default function Layout({ location, children }) {
