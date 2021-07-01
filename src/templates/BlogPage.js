@@ -7,7 +7,6 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import BlockContent from "@sanity/block-content-to-react";
 import styled from "@emotion/styled";
 import { centre_content } from "../components/helpers";
-import { css } from "@emotion/react";
 
 const ContentWrapper = styled.article`
   ${centre_content.md};
@@ -32,9 +31,6 @@ export default function BlogPage({ data, location }) {
           postContent.name
         }
         quality={100}
-        css={css`
-          ${centre_content.xl};
-        `}
         image={postContent.heroImage.asset.gatsbyImageData}
       />
       <ContentWrapper>
