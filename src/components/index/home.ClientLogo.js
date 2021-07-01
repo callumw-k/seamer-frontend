@@ -2,22 +2,27 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "@emotion/styled";
-import { centre_content } from "../helpers";
+import { breakpoints, centre_content } from "../helpers";
 
 const ComponentWrapper = styled.section`
   h2 {
     margin-bottom: 4rem;
   }
   ${centre_content.xxxl};
+  margin: var(--marginSpacingXL);
 `;
 
 const GridWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 10%);
-  grid-auto-rows: minmax(50px, 100px);
+  grid-template-columns: repeat(3, 30%);
+  grid-auto-rows: 50px;
+  grid-row-gap: 6rem;
   justify-content: space-between;
-  grid-row-gap: 4rem;
-  padding: 0 2rem;
+  ${breakpoints.md} {
+    grid-template-columns: repeat(5, 10%);
+    grid-auto-rows: minmax(50px, 100px);
+    grid-row-gap: 4rem;
+  }
 `;
 
 export default function ClientLogos() {
