@@ -11,9 +11,9 @@ const linkStyles = css`
 `;
 
 const RightArrow = styled(BiRightArrowAlt)`
-  transition: 200ms margin-left;
-  margin-left: 0.25rem;
-  ${(props) => (props.hover ? "margin-left:0.75rem;" : "")}
+  transition: 200ms transform;
+  margin-left: 0.5rem;
+  ${(props) => (props.hover ? "transform: translate(0.75rem,0);" : "")}
 `;
 
 export default function InternalLink(props) {
