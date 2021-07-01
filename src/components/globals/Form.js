@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { breakpoints } from "../helpers";
+import Button from "./button";
+import { css } from "@emotion/react";
 
 const FormWrapper = styled.form`
   flex-basis: 70%;
@@ -46,18 +48,6 @@ const SubmitColumn = styled.div`
   display: flex;
   justify-content: flex-end;
   margin: 2rem 0 0 0;
-`;
-
-const SubmitButton = styled.button`
-  padding: 0.5rem 1rem;
-  background-color: white;
-  border: none;
-  outline: none;
-  transition: background-color 250ms ease-in, color 250ms ease-in;
-  &:hover {
-    background-color: black;
-    color: white;
-  }
 `;
 
 export default function Form() {
@@ -116,9 +106,14 @@ export default function Form() {
         </InputWrapper>
       </div>
       <SubmitColumn>
-        <SubmitButton type="submit" value="Submit">
-          Submit
-        </SubmitButton>
+        <Button
+          extendedStyle={css`
+            font-size: var(--h4);
+          `}
+          type="submit"
+          value="Submit"
+          text="Submit"
+        />
       </SubmitColumn>
     </FormWrapper>
   );
