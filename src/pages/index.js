@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import Layout from "../components/layout";
 import HomeHero from "../components/index/home.hero";
 import HomeVideo from "../components/index/home.video";
@@ -27,7 +27,7 @@ const IndexPage = ({ data, location }) => {
         internalLinkUrl={"/contact"}
         internalLinkText={"Here's how"}
       />
-      <HomeVideo />
+      {/*<HomeVideo />*/}
       <HomeAboutUs />
       <HomeClients clients={clients} />
       <ClientLogos />
