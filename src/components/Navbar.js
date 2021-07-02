@@ -24,7 +24,7 @@ const Inner = styled.div`
 
 const Nav = styled.nav`
   display: grid;
-  ${breakpoints.lg} {
+  @media screen and (max-height: 1000px) and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 0 10rem;
   }

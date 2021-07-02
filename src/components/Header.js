@@ -4,6 +4,7 @@ import { centre_content } from "./helpers";
 import Navbar from "./Navbar";
 import { StaticImage } from "gatsby-plugin-image";
 import { HiOutlineMenuAlt4 as MenuIcon } from "react-icons/hi";
+import SeamerLogo from "../images/svgs/seamer_logo.svg";
 const Wrapper = styled.header`
   position: fixed;
   top: 0;
@@ -29,9 +30,11 @@ const Menu = styled(MenuIcon)`
   color: ${(props) => (props.isOpen ? "white" : "var(--black)")};
 `;
 
-const ImageWrapper = styled.div`
-  transition: 250ms opacity ease-in;
+const Logo = styled(SeamerLogo)`
+  width: 200px;
   opacity: ${(props) => (props.isLogoVisible ? " 100" : "0")};
+  transition: 250ms opacity ease-in, 250ms fill ease-in;
+  fill: ${(props) => (props.isOpen ? "white" : "black")};
 `;
 
 const Header = () => {
@@ -68,14 +71,7 @@ const Header = () => {
     <React.Fragment>
       <Wrapper>
         <Inner>
-          <ImageWrapper isLogoVisible={isLogoVisible}>
-            <StaticImage
-              src="../images/logo/seamer_logo.png"
-              alt="Seamer Design logo"
-              imgStyle={{ objectFit: "contain" }}
-              width={200}
-            />
-          </ImageWrapper>
+          <Logo isOpen={isOpen} isLogoVisible={isLogoVisible} />
           <Menu isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
         </Inner>
       </Wrapper>
