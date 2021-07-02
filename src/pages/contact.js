@@ -3,6 +3,13 @@ import HeadMeta from "../components/HeadMeta";
 import Layout from "../components/layout";
 import { graphql } from "gatsby";
 import Hero from "../components/globals/Hero";
+import Form from "../components/globals/Form";
+import styled from "@emotion/styled";
+import { centre_content } from "../components/helpers";
+
+const Inner = styled.div`
+  ${centre_content.lg};
+`;
 
 export default function ContactPage({ location, data }) {
   const pageMeta = data.pageMeta.SEO;
@@ -19,8 +26,11 @@ export default function ContactPage({ location, data }) {
         description={
           "We’d love to hear from you. Get in touch and let’s make brand work, together."
         }
-        width={"md"}
+        width="md"
       />
+      <Inner>
+        <Form />
+      </Inner>
     </Layout>
   );
 }
