@@ -81,6 +81,7 @@ const MainStyles = styled.main`
   background-color: white;
   margin-bottom: 100vh;
   padding-bottom: 4rem;
+  min-height: 100vh;
 `;
 
 export default function Layout({ location, children }) {
