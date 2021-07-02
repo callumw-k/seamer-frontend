@@ -6,6 +6,12 @@ import { breakpoints } from "../helpers";
 import { Link } from "gatsby";
 
 const ContentWrapper = styled.div`
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   ${breakpoints.max_md} {
     padding: 0 5%;
   }
@@ -17,8 +23,7 @@ const smallTextStyling = css`
   margin-bottom: 0.5rem;
 `;
 const titleStyling = css`
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 0;
   font-size: var(--h2);
 `;
 
