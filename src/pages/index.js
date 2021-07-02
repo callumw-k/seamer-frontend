@@ -27,7 +27,7 @@ const IndexPage = ({ data, location }) => {
         internalLinkUrl={"/contact"}
         internalLinkText={"Here's how"}
       />
-      {/*<HomeVideo />*/}
+      <HomeVideo />
       <HomeAboutUs />
       <HomeClients clients={clients} />
       <ClientLogos />
