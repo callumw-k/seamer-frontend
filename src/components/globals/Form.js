@@ -19,6 +19,7 @@ const InputWrapper = styled.div`
   }
   input {
     padding: 0.75rem 1rem;
+    color: white;
     background-color: var(--black);
     line-height: 1.4rem;
     border: none;

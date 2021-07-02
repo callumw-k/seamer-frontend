@@ -5,7 +5,7 @@ import ClientSingle from "./client.components/client.single";
 import styled from "@emotion/styled";
 
 const FolioWrapper = styled.section`
-  max-width: 2100px;
+  max-width: 2200px;
   margin: var(--marginSpacingLarge);
 `;
 function ClientGenerator({ client, single }) {

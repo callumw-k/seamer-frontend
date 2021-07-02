@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     justify-content: space-between;
 
     & > div {
-      flex-basis: 48%;
+      flex-basis: 46%;
     }
 
     &>div: ${(props) => (props.staggered ? "last-child" : "first-of-type")} {

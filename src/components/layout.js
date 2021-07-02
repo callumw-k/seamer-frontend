@@ -71,9 +71,12 @@ const globalStyles = css`
 
   a {
     color: var(--linkColor);
-    text-decoration: underline;
     margin-top: 0.5rem;
     display: inline-block;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
@@ -88,7 +91,7 @@ export default function Layout({ location, children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
-      <Header />
+      <Header location={location} />
       <MainStyles>{children}</MainStyles>
       <Footer location={location} />
     </React.Fragment>

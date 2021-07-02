@@ -5,13 +5,14 @@ import Navbar from "./Navbar";
 import { StaticImage } from "gatsby-plugin-image";
 import { HiOutlineMenuAlt4 as MenuIcon } from "react-icons/hi";
 import SeamerLogo from "../images/svgs/seamer_logo.svg";
+import { Link } from "gatsby";
 const Wrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  border-top: 0.5rem solid var(--black);
+  border-top: 0.5rem solid #ec564d;
 `;
 
 const Inner = styled.div`
@@ -37,7 +38,7 @@ const Logo = styled(SeamerLogo)`
   fill: ${(props) => (props.isOpen ? "white" : "black")};
 `;
 
-const Header = () => {
+const Header = ({ location }) => {
   const [isOpen, setOpen] = useState(false);
   const [isLogoVisible, setLogoVisible] = useState(true);
 
@@ -71,7 +72,9 @@ const Header = () => {
     <React.Fragment>
       <Wrapper>
         <Inner>
-          <Logo isOpen={isOpen} isLogoVisible={isLogoVisible} />
+          <Link to="/">
+            <Logo isOpen={isOpen} isLogoVisible={isLogoVisible} />
+          </Link>
           <Menu isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
         </Inner>
       </Wrapper>

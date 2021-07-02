@@ -7,6 +7,7 @@ import HomeAboutUs from "../components/index/home.about-us";
 import { graphql } from "gatsby";
 import HeadMeta from "../components/HeadMeta";
 import ClientLogos from "../components/index/home.ClientLogo";
+import LazyIframe from "../components/home.lazyvideo";
 
 // markup
 const IndexPage = ({ data, location }) => {
@@ -27,7 +28,7 @@ const IndexPage = ({ data, location }) => {
         internalLinkUrl={"/contact"}
         internalLinkText={"Here's how"}
       />
-      <HomeVideo />
+      <LazyIframe />
       <HomeAboutUs />
       <HomeClients clients={clients} />
       <ClientLogos />
