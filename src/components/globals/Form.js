@@ -20,7 +20,7 @@ const InputWrapper = styled.div`
   }
   input {
     padding: 0.75rem 1rem;
-    background-color: #1b1b1b;
+    background-color: var(--black);
     color: white;
     line-height: 1.4rem;
     border: none;
@@ -109,6 +109,7 @@ export default function Form() {
         <Button
           extendedStyle={css`
             font-size: var(--h4);
+            color: white;
           `}
           type="submit"
           value="Submit"
