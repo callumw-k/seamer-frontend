@@ -16,17 +16,17 @@ const RightArrow = styled(BiRightArrowAlt)`
   ${(props) => (props.hover ? "transform: translate(0.75rem,0);" : "")}
 `;
 
-export default function InternalLink(props) {
+export default function InternalLink({ url, text, extendedStyle }) {
   const [isHover, hoverChanger] = useState(false);
 
   return (
     <Link
       onMouseEnter={() => hoverChanger(true)}
       onMouseLeave={() => hoverChanger(false)}
-      css={[linkStyles, props.extendedStyle]}
-      to={props.url}
+      css={[linkStyles, extendedStyle]}
+      to={url}
     >
-      {props.text}
+      {text}
       <RightArrow hover={isHover ? 1 : 0} />
     </Link>
   );
