@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   right: 0;
   left: 0;
   z-index: 99;
-  background-color: var(--orange);
+  background-color: var(--black);
   height: ${(props) => (props.isOpen ? "100vh" : "0")};
   overflow: hidden;
   transition: height 1s cubic-bezier(0.14, 0.83, 0.44, 0.94);
@@ -29,6 +29,7 @@ const Nav = styled.nav`
     grid-gap: 0 10rem;
   }
   a {
+    color: white;
     font-size: var(--biggerHeading);
   }
 `;
