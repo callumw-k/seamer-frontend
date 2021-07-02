@@ -6,7 +6,6 @@ import { css } from "@emotion/react";
 
 const FormWrapper = styled.form`
   flex-basis: 70%;
-  color: white;
 `;
 
 const InputWrapper = styled.div`
@@ -21,7 +20,6 @@ const InputWrapper = styled.div`
   input {
     padding: 0.75rem 1rem;
     background-color: var(--black);
-    color: white;
     line-height: 1.4rem;
     border: none;
     border-bottom: 5px solid white;
@@ -109,7 +107,6 @@ export default function Form() {
         <Button
           extendedStyle={css`
             font-size: var(--h4);
-            color: white;
           `}
           type="submit"
           value="Submit"
