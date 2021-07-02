@@ -7,7 +7,7 @@ const HeroSection = styled.div`
   display: flex;
   flex-direction: column;
   ${(props) =>
-    props.width === "md" ? centre_content.md : centre_content.xxxl};
+    props.width === "md" ? centre_content.lg : centre_content.xxxl};
   padding: 8rem 0;
   ${breakpoints.md} {
     flex-direction: row;
