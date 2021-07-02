@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 
 const Wrapper = styled.footer`
-  background-color: var(--orange);
+  background-color: var(--black);
   position: fixed;
   bottom: 0;
   height: 100vh;
@@ -17,7 +17,6 @@ const Wrapper = styled.footer`
   width: 100%;
   left: 0;
   z-index: -1;
-  //padding: 6rem 0;
   ${breakpoints.lg} {
     display: flex;
   }
@@ -32,11 +31,12 @@ const Inner = styled.div`
   ${centre_content.lg};
 `;
 const Details = styled.div`
-  h4 {
-    text-decoration: underline;
-  }
+  &,
   a {
     color: white;
+  }
+  h4 {
+    text-decoration: underline;
   }
   ${breakpoints.md} {
     margin-left: 2rem;
@@ -51,6 +51,7 @@ const IconWrapper = styled.div`
   margin: 2rem auto 0 auto;
   & > svg {
     fill: white;
+    margin: 0 0.5rem;
   }
 `;
 export default function Footer() {
@@ -78,12 +79,12 @@ export default function Footer() {
             src="../images/seamer_logo.png"
             alt=""
             quality={100}
-            width={400}
-            style={{ margin: "0 auto;" }}
+            width={300}
+            style={{ margin: "0 auto" }}
             imgStyle={{ objectFit: "contain" }}
           />
           <IconWrapper>
-            <Facebook size={40} /> <Instagram size={40} />
+            <Facebook size={30} /> <Instagram size={30} />
           </IconWrapper>
         </FooterSocials>
       </Inner>
