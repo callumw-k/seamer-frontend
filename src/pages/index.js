@@ -9,7 +9,7 @@ import ClientLogos from "../components/index/home.ClientLogo";
 import LazyIframe from "../components/lazyiframe";
 
 // markup
-const IndexPage = ({ data, location }) => {
+export default function IndexPage({ data, location }) {
   const clients = data.clients.nodes;
   const pageMeta = data.pageMeta.SEO;
   return (
@@ -38,7 +38,7 @@ const IndexPage = ({ data, location }) => {
       <ClientLogos />
     </Layout>
   );
-};
+}
 
 export const query = graphql`
   query {
@@ -72,5 +72,3 @@ export const query = graphql`
     }
   }
 `;
-
-export default IndexPage;

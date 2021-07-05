@@ -32,14 +32,14 @@ const Menu = styled(MenuIcon)`
 
 const Logo = styled(SeamerLogo)`
   width: 200px;
-  opacity: ${(props) => (props.isLogoVisible ? " 100" : "0")};
+  opacity: ${(props) => (props.islogovisible ? " 100" : "0")};
   transition: 250ms opacity ease-in, 250ms fill ease-in;
-  fill: ${(props) => (props.isOpen ? "white" : "black")};
+  fill: ${(props) => (props.isopen ? "white" : "black")};
 `;
 
 const Header = ({ location }) => {
   const [isOpen, setOpen] = useState(false);
-  const [isLogoVisible, setLogoVisible] = useState(true);
+  const [isLogoVisible, setLogoVisible] = useState(1);
 
   let _isMounted = useRef(null);
 
@@ -57,9 +57,9 @@ const Header = ({ location }) => {
     if (!scheduled && _isMounted.current) {
       setTimeout(() => {
         if (window.pageYOffset > 50) {
-          setLogoVisible(false);
+          setLogoVisible(0);
         } else {
-          setLogoVisible(true);
+          setLogoVisible(1);
         }
         scheduled = null;
       }, 100);
@@ -72,9 +72,9 @@ const Header = ({ location }) => {
       <Wrapper>
         <Inner>
           <Link to="/">
-            <Logo isOpen={isOpen} isLogoVisible={isLogoVisible} />
+            <Logo isopen={isOpen ? 1 : 0} islogovisible={isLogoVisible} />
           </Link>
-          <Menu isOpen={isOpen} onClick={() => setOpen(!isOpen)} />
+          <Menu isopen={isOpen ? 1 : 0} onClick={() => setOpen(!isOpen)} />
         </Inner>
       </Wrapper>
       <Navbar isOpen={isOpen} />
