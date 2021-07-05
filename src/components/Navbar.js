@@ -2,6 +2,8 @@ import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import { centre_content } from "./helpers";
+import ExternalLink from "./globals/externalLink";
+import { css } from "@emotion/react";
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
@@ -17,14 +19,15 @@ const Wrapper = styled.div`
 
 const Inner = styled.div`
   display: flex;
-  align-items: center;
+  padding: 12rem 0;
+  justify-content: space-between;
   ${centre_content.xxxl};
   height: 100vh;
 `;
 
 const Nav = styled.nav`
   display: grid;
-  @media screen and (max-height: 1000px) and (min-width: 768px) {
+  @media screen and (max-height: 768px) and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 0 10rem;
   }
@@ -33,11 +36,10 @@ const Nav = styled.nav`
     font-size: var(--biggerHeading);
   }
 `;
+const SocialLinks = styled.div`
+  align-self: flex-start;
+`;
 export default function Navbar({ isOpen }) {
-  // function checkHeight(payload) {
-  //   console.log(payload);
-  // }
-
   return (
     <Wrapper id="header" isopen={isOpen ? 1 : 0}>
       <Inner>
@@ -48,6 +50,15 @@ export default function Navbar({ isOpen }) {
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </Nav>
+        <SocialLinks>
+          <ExternalLink
+            text="Facebook"
+            url="https://facebook.com"
+            extendedStyle={css`
+              font-size: var(--h3);
+            `}
+          />
+        </SocialLinks>
       </Inner>
     </Wrapper>
   );
