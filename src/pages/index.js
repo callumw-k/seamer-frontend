@@ -6,7 +6,7 @@ import HomeAboutUs from "../components/index/home.about-us";
 import { graphql } from "gatsby";
 import HeadMeta from "../components/HeadMeta";
 import ClientLogos from "../components/index/home.ClientLogo";
-import LazyIframe from "../components/home.lazyvideo";
+import LazyIframe from "../components/lazyiframe";
 
 // markup
 const IndexPage = ({ data, location }) => {

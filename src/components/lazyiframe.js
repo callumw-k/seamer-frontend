@@ -24,7 +24,7 @@ const LazyIframe = ({ title, url }) => {
           title={title}
           src={url}
           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-          allowFullScreen="true"
+          allowFullScreen={true}
           loading="lazy"
           style={{
             bottom: 0,
