@@ -1,6 +1,9 @@
 const dotenv = require("dotenv");
 dotenv.config({ path: ".env" });
 module.exports = {
+  flags: {
+    FAST_DEV: true,
+  },
   siteMetadata: {
     title: "Seamer Design",
     titleTemplate: "%s | Seamer Design",
