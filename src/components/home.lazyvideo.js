@@ -2,7 +2,7 @@ import { useRef } from "react";
 import React from "react";
 import useIntersectionObserver from "@react-hook/intersection-observer";
 
-const LazyIframe = () => {
+const LazyIframe = ({ title, url }) => {
   const containerRef = useRef();
   const lockRef = useRef(false);
   const { isIntersecting } = useIntersectionObserver(containerRef);
@@ -21,7 +21,8 @@ const LazyIframe = () => {
     >
       {lockRef.current && (
         <iframe
-          src="https://iframe.videodelivery.net/343f1a0f80efd25096c6913ccfd8e5c4?muted=true&loop=true&autoplay=true&controls=false"
+          title={title}
+          src={url}
           allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
           allowFullScreen="true"
           loading="lazy"

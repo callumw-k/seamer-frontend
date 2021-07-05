@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
 export default function HomeVideo() {
-  const PlayerWrapper = styled.div`
-    position: relative;
-    padding-top: 56.25%;
-  `;
+  // const PlayerWrapper = styled.div`
+  //   position: relative;
+  //   padding-top: 56.25%;
+  // `;
 
   return (
     <p>Test</p>

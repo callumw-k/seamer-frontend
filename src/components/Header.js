@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import styled from "@emotion/styled";
 import { centre_content } from "./helpers";
 import Navbar from "./Navbar";
-import { StaticImage } from "gatsby-plugin-image";
 import { HiOutlineMenuAlt4 as MenuIcon } from "react-icons/hi";
 import SeamerLogo from "../images/svgs/seamer_logo.svg";
 import { Link } from "gatsby";

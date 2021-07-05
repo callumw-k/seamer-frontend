@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Form from "./globals/Form";
 import { breakpoints, centre_content } from "./helpers";
 import { StaticImage } from "gatsby-plugin-image";
 import {

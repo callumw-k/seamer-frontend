@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
 import HomeHero from "../components/index/home.hero";
-import HomeVideo from "../components/index/home.video";
 import HomeClients from "../components/index/home.clients";
 import HomeAboutUs from "../components/index/home.about-us";
 import { graphql } from "gatsby";
@@ -28,7 +27,12 @@ const IndexPage = ({ data, location }) => {
         internalLinkUrl={"/contact"}
         internalLinkText={"Here's how"}
       />
-      <LazyIframe />
+      <LazyIframe
+        title="Seamer design video"
+        url={
+          "https://iframe.videodelivery.net/343f1a0f80efd25096c6913ccfd8e5c4?muted=true&loop=true&autoplay=true&controls=false"
+        }
+      />
       <HomeAboutUs />
       <HomeClients clients={clients} />
       <ClientLogos />

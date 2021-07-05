@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
-import { breakpoints, centre_content } from "./helpers";
+import { centre_content } from "./helpers";
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
