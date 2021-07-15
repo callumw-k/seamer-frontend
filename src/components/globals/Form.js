@@ -13,10 +13,12 @@ const InputWrapper = styled.div`
   flex-direction: column;
   flex: 1;
   margin: 1rem 0;
+  
   label {
     font-size: var(--smallText);
     margin-bottom: 0.25rem;
   }
+  
   input {
     padding: 0.75rem 1rem;
     color: white;

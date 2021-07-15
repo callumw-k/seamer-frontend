@@ -19,8 +19,8 @@ const Wrapper = styled.div`
       flex-basis: 46%;
     }
 
-    &>div: ${(props) => (props.staggered ? "last-child" : "first-of-type")} {
-      margin-top: 4rem;
+    & > div: ${(props) => (props.staggered ? "last-child" : "first-of-type")} {
+      margin-top: 12rem;
     }
   } ;
 `;

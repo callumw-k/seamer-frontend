@@ -12,10 +12,12 @@ const ContentWrapper = styled.div`
       text-decoration: underline;
     }
   }
+  
+  ${(props) => (props.single ? "" : "padding: 0 5%;")}
+  
   ${breakpoints.max_md} {
     padding: 0 5%;
   }
-  ${(props) => (props.single ? "" : "padding: 0 5%;")}
 `;
 
 const smallTextStyling = css`
@@ -30,7 +32,6 @@ const titleStyling = css`
 export default function MediaCard({
   alt,
   image,
-  type,
   title,
   subtitle,
   single,
@@ -41,11 +42,10 @@ export default function MediaCard({
     <div>
       <GatsbyImage image={image} alt={alt ? alt : title} />
       <ContentWrapper css={extendStyles} single={single}>
-        {type ? <p css={smallTextStyling}>{type}</p> : ""}
         <Link to={url}>
-          <h3 css={titleStyling}>{title}</h3>
+          <h3 css={titleStyling}>{subtitle}</h3>
         </Link>
-        {subtitle ? <p>{subtitle}</p> : ""}
+        {title && <p>{title}</p>}
       </ContentWrapper>
     </div>
   );

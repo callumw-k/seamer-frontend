@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import { HiOutlineMenuAlt4 as MenuIcon } from "react-icons/hi";
 import SeamerLogo from "../images/svgs/seamer_logo.svg";
 import { Link } from "gatsby";
+
 const Wrapper = styled.header`
   position: fixed;
   top: 0;

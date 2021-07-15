@@ -41,7 +41,7 @@ const Work = ({ data, location }) => {
             subtitle={client.subtitle}
             extendStyles={css`
               h3 {
-                font-size: var(--h3);
+                font-size: var(--h2);
               }
             `}
           />
