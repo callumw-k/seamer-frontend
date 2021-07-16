@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
 const Inner = styled.div`
   display: flex;
-  padding: 8rem 0 2rem;
+  padding: 10rem 0 2rem;
   justify-content: space-between;
   ${centre_content.xxxl};
   height: 100vh;
@@ -28,29 +28,34 @@ const Inner = styled.div`
 const Nav = styled.nav`
   display: flex;
   flex-flow: column nowrap;
-  @media screen and (min-width: 768px) {
+  // On desktop, allow the links to break once they hit the padding at the bottom.
+  ${breakpoints.md} {
     flex-flow: column wrap;
-    a {
-      margin-right: 2rem;
-    }
   }
+  //
   a {
     color: var(--black);
     font-size: var(--biggerHeading);
+    margin-right: 2rem;
   }
 `;
 const SocialLinks = styled.div`
   display: flex;
   flex-direction: column;
+  // Hide the social links on mobile
   height: 0;
-  visibility: hidden;
   opacity: 0;
+  visibility: hidden;
+  //
   align-self: flex-start;
+  margin-right: 20vw;
+  // Show the social links on tablet and higher
   ${breakpoints.md} {
     height: auto;
     visibility: visible;
     opacity: 1;
   }
+  //
   a {
     font-size: var(--h3);
   }
@@ -72,7 +77,7 @@ export default function Navbar({ isOpen }) {
               margin-bottom: 0;
             `}
           >
-            Social Links
+            Social
           </p>
           <ExternalLink
             text="Facebook"

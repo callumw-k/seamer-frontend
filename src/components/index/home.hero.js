@@ -14,13 +14,15 @@ export default function HomeHero(props) {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    ${centre_content.xxxl};
-    padding: 8rem 0;
+    padding: 10rem 0;
+    
     ${breakpoints.md} {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
     }
+    ${centre_content.xxxl};
+    
     h1 {
       ${fontMarginReset};
       ${breakpoints.md} {
@@ -29,6 +31,7 @@ export default function HomeHero(props) {
         flex-basis: 48%;
       }
     }
+    
     h2 {
       font-size: var(--h3);
       ${breakpoints.md} {

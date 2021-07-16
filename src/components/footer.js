@@ -72,9 +72,8 @@ const FooterSocials = styled.div`
   grid-area: 2/1/2/3;
   display: flex;
   flex-direction: column;
-  ${breakpoints.max_md} {
-    margin-top: 4rem;
-  }
+  margin-top: 4rem;
+
   .footer_image {
     ${breakpoints.max_md} {
       max-width: 200px;

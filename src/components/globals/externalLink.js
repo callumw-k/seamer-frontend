@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
 import { css } from "@emotion/react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import styled from "@emotion/styled";
