@@ -54,7 +54,7 @@ export const query = graphql`
         }
         heroImage {
           asset {
-            gatsbyImageData(aspectRatio: 1.7)
+            gatsbyImageData(aspectRatio: 1.5)
             altText
           }
         }

@@ -2,18 +2,14 @@ import React from "react";
 import Layout from "../components/layout";
 import Hero from "../components/globals/Hero";
 import { graphql } from "gatsby";
-import MediaCard from "../components/globals/MediaCard";
 import styled from "@emotion/styled";
-import { breakpoints, centre_content } from "../components/helpers";
+import { centre_content } from "../components/helpers";
 import HeadMeta from "../components/HeadMeta";
+import NewsCard from "../components/news/news.media-card";
 
 const GridWrapper = styled.div`
-  display: grid;
-  ${breakpoints.md} {
-    grid-template-columns: repeat(2, 49%);
-  }
-  grid-row-gap: 2rem;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
   ${centre_content.xxxl}
 `;
 
@@ -24,12 +20,11 @@ export default function News({ data, location }) {
   //loop over posts and return the media card
   function postLoop(posts) {
     return posts.map((post) => (
-      <MediaCard
-        key={post.id}
+      <NewsCard
         title={post.name}
-        image={post?.heroImage?.asset?.gatsbyImageData}
-        url={`/work/${post.slug.current}`}
-        single
+        image={post.heroImage.asset}
+        subtitle={post.description}
+        linkto={post.slug.current}
       />
     ));
   }
@@ -52,12 +47,14 @@ export const query = graphql`
       nodes {
         id
         name
+        subtitle
         slug {
           current
         }
         heroImage {
           asset {
             gatsbyImageData(aspectRatio: 1.3)
+            altText
           }
         }
       }

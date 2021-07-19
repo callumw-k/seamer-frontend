@@ -9,19 +9,19 @@ const ComponentWrapper = styled.section`
     margin-bottom: 4rem;
   }
   ${centre_content.xxxl};
-  margin: var(--marginSpacingXL);
 `;
 
 const GridWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 30%);
+  grid-template-columns: repeat(2, 50%);
   grid-auto-rows: 50px;
-  grid-row-gap: 6rem;
+  gap: 6rem 0;
   justify-content: space-between;
+  margin: 6rem 0;
   ${breakpoints.md} {
     grid-template-columns: repeat(5, 10%);
     grid-auto-rows: minmax(50px, 100px);
-    grid-row-gap: 4rem;
+    padding: 0 2rem;
   }
 `;
 
@@ -32,7 +32,7 @@ export default function ClientLogos() {
         nodes {
           id
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED)
+            gatsbyImageData(layout: CONSTRAINED, quality: 100)
           }
         }
       }

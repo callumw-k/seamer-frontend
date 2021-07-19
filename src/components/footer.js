@@ -1,15 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { breakpoints, centre_content } from "./helpers";
-import { StaticImage } from "gatsby-plugin-image";
+import { centre_content } from "./helpers";
 import {
   FaFacebookF as Facebook,
   FaInstagram as Instagram,
 } from "react-icons/fa";
-import InternalLink from "./globals/internalLink";
 
 const Wrapper = styled.footer`
-  background-color: var(--black);
+  background-color: var(--orange);
   position: fixed;
   bottom: 0;
   height: 100vh;
@@ -17,73 +15,38 @@ const Wrapper = styled.footer`
   width: 100%;
   left: 0;
   z-index: -1;
-  ${breakpoints.lg} {
-    display: flex;
-  }
 `;
 const Inner = styled.div`
-  &,
-  a {
-    color: white;
-  }
-  ${breakpoints.max_md} {
-    padding: 4rem 0;
-  }
-  ${breakpoints.lg} {
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: 60% 40%;
-  }
-  ${centre_content.xxl};
-`;
-
-const ContactSection = styled.div`
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
   h3 {
     font-size: var(--jumboHeading);
   }
+
+  &,
   a {
-    font-size: var(--h3);
+    color: black;
   }
+
+  ${centre_content.xxl};
 `;
 
 const Details = styled.div`
-  margin: var(--marginSpacingLarge);
-  ${breakpoints.md} {
-    margin: 0 0 0 2rem;
-  }
   h4 {
     margin-top: 1rem;
     text-decoration: underline;
   }
 `;
 const DetailsInner = styled.div`
-  ${breakpoints.md} {
-    display: flex;
-    & > div {
-      flex-basis: 50%;
-    }
-    & > div:first-of-type {
-      margin-right: 2rem;
-    }
-  }
+  margin: var(--marginSpacingMedium);
 `;
-const FooterSocials = styled.div`
-  grid-area: 2/1/2/3;
-  display: flex;
-  flex-direction: column;
-  margin-top: 4rem;
 
-  .footer_image {
-    ${breakpoints.max_md} {
-      max-width: 200px;
-    }
-  }
-`;
 const IconWrapper = styled.div`
-  margin: 2rem auto 0 auto;
-  & > svg {
-    fill: white;
+  & svg {
+    fill: black;
     margin: 0 0.5rem;
   }
 `;
@@ -91,15 +54,13 @@ export default function Footer() {
   return (
     <Wrapper>
       <Inner>
-        <ContactSection>
-          <h3>
-            We Make <br />
-            Brand Work
-          </h3>
-          <InternalLink text="Get in touch" url="/contact" />
-        </ContactSection>
+        <h3>
+          We Make <br />
+          Brand Work
+        </h3>
+        {/*<InternalLink text="Get in touch" url="/contact" />*/}
         <Details>
-          <h3>Our details.</h3>
+          {/*<h3>Our details.</h3>*/}
           <DetailsInner>
             <div>
               <h4>Melbourne</h4>
@@ -119,20 +80,16 @@ export default function Footer() {
             </div>
           </DetailsInner>
         </Details>
-        <FooterSocials>
-          <StaticImage
-            src="../images/seamer_logo.png"
-            alt=""
-            quality={100}
-            className="footer_image"
-            width={300}
-            style={{ margin: "0 auto" }}
-            imgStyle={{ objectFit: "contain" }}
-          />
+        <div>
           <IconWrapper>
-            <Facebook size={30} /> <Instagram size={30} />
+            <a href="https://www.facebook.com/Seamer-Design-103537193025995">
+              <Facebook size={30} />
+            </a>
+            <a href="https://www.instagram.com/seamer_design/">
+              <Instagram size={30} />
+            </a>
           </IconWrapper>
-        </FooterSocials>
+        </div>
       </Inner>
     </Wrapper>
   );

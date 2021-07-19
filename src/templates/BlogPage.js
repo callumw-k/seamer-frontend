@@ -23,7 +23,7 @@ export default function BlogPage({ data, location }) {
         description={headMeta?.description}
         slug={location.pathname}
       />
-      <Hero title={postContent.name} subtitle={postContent.subtitle} />
+      <Hero title={postContent.name} description={postContent.subtitle} />
       <GatsbyImage
         alt={
           (postContent.heroImage.asset.altText &&

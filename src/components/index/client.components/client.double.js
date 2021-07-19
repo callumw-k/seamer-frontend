@@ -16,11 +16,12 @@ const Wrapper = styled.div`
     justify-content: space-between;
 
     & > div {
-      flex-basis: 46%;
+      flex-basis: 50%;
     }
 
-    & > div: ${(props) => (props.staggered ? "last-child" : "first-of-type")} {
+    &>div: ${(props) => (props.staggered ? "last-child" : "first-of-type")} {
       margin-top: 12rem;
+      flex-basis: 42%;
     }
   } ;
 `;

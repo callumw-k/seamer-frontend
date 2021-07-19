@@ -55,6 +55,7 @@
     --marginSpacingLarge: 8rem auto;
     --marginSpacingMedium: 4rem auto;
     --marginSpacingXL: 12rem auto;
+    --marginSpacingMD_NC : 4rem 0;
 
     --layoutXXXLarge: 2100px;
 }
