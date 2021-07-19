@@ -6,6 +6,7 @@ import Footer from "./footer";
 import Header from "./Header";
 import styled from "@emotion/styled";
 import GetInTouch from "./globals/get-in-touch";
+import AnimatedCursor from "react-animated-cursor";
 
 const globalStyles = css`
   * {
@@ -91,6 +92,12 @@ export default function Layout({ location, children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
+      <AnimatedCursor
+        color="29, 29, 27"
+        outerSize={16}
+        innerSize={16}
+        innerScale={1}
+      />
       <Header location={location} />
       <MainStyles>{children}</MainStyles>
       <GetInTouch />
