@@ -77,34 +77,34 @@ const scollStyles = css`
 
 const expertiseInfo = {
   brand: {
-    title: "Brand",
+    title: "Branding",
     attributes: [
-      "BRAND ARCHITECTURE",
-      "BRAND GUIDELINES",
-      "BRAND IDENTITY",
-      "BRAND WORKSHOPS",
-      "MESSAGING STRATEGY",
-      "SOCIAL STRATEGY",
-      "STAFF ACTIVATIONS",
+      "Brand Audit",
+      "Brand Strategy",
+      "Brand Name",
+      "Identity Design",
+      "Style Guides",
+      "Brand Activation",
     ],
   },
   communications: [
-    "CONTENT CREATION",
-    "DIGITAL MARKETING",
-    "EMAIL",
-    "PACKAGING",
-    "PRINT AND OUTDOOR",
-    "VIDEO PRODUCTION",
-    "WEBSITES",
+    "Stationery",
+    "Publications",
+    "Packaging",
+    "Promotion",
+    "Way-finding",
+    "Advertising",
+    // "Exhibitions",
   ],
   digital: [
-    "AUTOMATION",
-    "DIGITAL DESIGN SYSTEMS",
-    "PRODUCT DESIGN",
-    "USER EXPERIENCE DESIGN",
-    "USER INTERFACE DESIGN",
-    "USER RESEARCH",
-    "WEB DEVELOPMENT",
+    "Website Design",
+    "Website Development",
+    "Animation",
+    "Social Media",
+    "Front-end Development",
+    "Website Maintenance",
+    // "Digital Banners",
+    // "EDM's",
   ],
 };
 
@@ -137,7 +137,7 @@ export default function HomeAboutUs() {
         </GridItem>
         <GridItem>
           <StrategyIcon css={css(IconStyles)} />
-          <h3>Communications</h3>
+          <h3>Design</h3>
           <ul>
             {expertiseInfo.communications.map((listItem) => (
               <li key={listItem}>{listItem}</li>

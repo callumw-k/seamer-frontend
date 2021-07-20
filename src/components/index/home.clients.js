@@ -17,7 +17,8 @@ function ClientGenerator({ client, single }) {
       title={client.name}
       subtitle={client.subtitle}
       url={"work/" + client.slug.current}
-      single={single ? single : ""}
+      single={(single && single) || null}
+      home={true}
     />
   );
 }
