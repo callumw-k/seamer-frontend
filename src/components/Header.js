@@ -29,6 +29,7 @@ const Menu = styled(MenuIcon)`
   cursor: pointer;
   transition: 500ms ease-in color;
   color: ${(props) => (props.isOpen ? "white" : "var(--black)")};
+  mix-blend-mode: difference;
   -webkit-filter: invert(0.4);
 `;
 

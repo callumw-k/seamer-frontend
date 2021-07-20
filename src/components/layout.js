@@ -92,12 +92,12 @@ export default function Layout({ location, children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
-      <AnimatedCursor
-        color="77,236,114"
-        outerSize={16}
-        innerSize={16}
-        innerScale={1}
-      />
+      {/*<AnimatedCursor*/}
+      {/*  color="77,236,114"*/}
+      {/*  outerSize={16}*/}
+      {/*  innerSize={16}*/}
+      {/*  innerScale={1}*/}
+      {/*/>*/}
       <Header location={location} />
       <MainStyles>{children}</MainStyles>
       <GetInTouch />

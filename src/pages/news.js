@@ -23,7 +23,7 @@ export default function News({ data, location }) {
       <NewsCard
         title={post.name}
         image={post.heroImage.asset}
-        subtitle={post.description}
+        subtitle={post.subtitle}
         linkto={post.slug.current}
       />
     ));
