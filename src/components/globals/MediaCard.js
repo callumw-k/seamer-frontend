@@ -6,19 +6,15 @@ import { breakpoints } from "../helpers";
 import { Link } from "gatsby";
 
 const ContentWrapper = styled.div`
-  max-width: 90%;
+  ${(props) => (props.home ? "padding: 0 5%" : "")};
 
-  ${(props) => (props.single ? "" : "padding: 0 5%;")}
-
-  a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
+  p {
+    margin-top: 0.25rem;
   }
 
-  ${breakpoints.max_md} {
-    padding: 0 5%;
+  ${breakpoints.md} {
+    max-width: 90%;
+    ${(props) => (props.single ? "padding: 0 0;" : "padding: 0 5%;")}
   }
 `;
 
@@ -33,6 +29,13 @@ const titleStyling = css`
   font-size: var(--h2);
 `;
 
+const linkStyling = css`
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export default function MediaCard({
   alt,
   image,
@@ -41,6 +44,7 @@ export default function MediaCard({
   single,
   url,
   extendStyles,
+  home,
 }) {
   return (
     <div>
@@ -53,8 +57,8 @@ export default function MediaCard({
           alt={alt ? alt : title}
         />
       </Link>
-      <ContentWrapper css={extendStyles} single={single}>
-        <Link to={url}>
+      <ContentWrapper home={home ? 1 : 0} css={extendStyles} single={single}>
+        <Link css={linkStyling} to={url}>
           <h3 css={titleStyling}>{subtitle}</h3>
         </Link>
         {title && <p>{title}</p>}
