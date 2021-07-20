@@ -8,7 +8,7 @@ const HeroSection = styled.div`
   flex-direction: column;
   ${(props) =>
     props.width === "md" ? centre_content.lg : centre_content.xxxl};
-  padding: 12rem 0;
+  padding: 8rem 0;
   ${breakpoints.md} {
     flex-direction: row;
     align-items: center;
@@ -16,9 +16,10 @@ const HeroSection = styled.div`
   }
 
   h2 {
+    ${fontMarginReset};
+    margin-top: 1rem;
     font-size: var(--h3);
     ${breakpoints.md} {
-      ${fontMarginReset};
       flex-basis: 50%;
       margin-left: 2%;
     }
@@ -29,7 +30,7 @@ const LeftContent = styled.div`
   h1 {
     word-break: break-word;
     font-weight: var(--fontExtraBold);
-    font-size: var(--jumboHeading);
+    font-size: var(--biggerHeading);
     ${breakpoints.md} {
       ${fontMarginReset};
     }
