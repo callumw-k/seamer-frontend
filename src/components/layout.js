@@ -93,7 +93,7 @@ export default function Layout({ location, children }) {
     <React.Fragment>
       <Global styles={globalStyles} />
       <AnimatedCursor
-        color="29, 29, 27"
+        color="77,236,114"
         outerSize={16}
         innerSize={16}
         innerScale={1}

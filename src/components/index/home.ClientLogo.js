@@ -13,7 +13,7 @@ const ComponentWrapper = styled.section`
 
 const GridWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(2, 46%);
   grid-auto-rows: 50px;
   gap: 6rem 0;
   justify-content: space-between;

@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
 const Inner = styled.div`
   display: flex;
-  padding: 10rem 0 2rem;
+  padding: 10vh 0 2rem;
   justify-content: space-between;
   ${centre_content.xxxl};
   height: 100vh;

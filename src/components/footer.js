@@ -17,13 +17,12 @@ const Wrapper = styled.footer`
   z-index: -1;
 `;
 const Inner = styled.div`
-  padding: 2rem 0;
+  padding: 10vh 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
   h3 {
-    font-size: var(--jumboHeading);
+    font-size: var(--biggerHeading);
   }
 
   &,

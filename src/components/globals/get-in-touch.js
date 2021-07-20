@@ -1,21 +1,27 @@
 import React from "react";
 import styled from "@emotion/styled";
 import InternalLink from "./internalLink";
-import { centre_content, fontMarginReset } from "../helpers";
+import { breakpoints, centre_content, fontMarginReset } from "../helpers";
 const Wrapper = styled.section`
   margin-bottom: 100vh;
   padding: 6rem 5%;
   color: white;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   background-color: var(--black);
+  ${breakpoints.md} {
+    flex-direction: row;
+    align-items: center;
+  }
   .title {
     font-size: var(--h1);
     ${fontMarginReset};
   }
   .content {
-    max-width: 42%;
+    ${breakpoints.md} {
+      max-width: 42%;
+    }
     font-size: var(--h4);
   }
   a {
