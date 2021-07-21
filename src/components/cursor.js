@@ -11,7 +11,11 @@ const CursorStyles = styled.div`
   z-index: 2;
   mix-blend-mode: difference;
   opacity: 1;
-  //transform: translate(-50%, -50%);
+  transform: translate(-100%, -100%);
+  ${(props) =>
+    `transform: translate( calc(${
+      props.posX === 0 ? "-50" : props.posX
+    }px - 50%) , calc(${props.posY}px - 50%))`}
   ${(props) => (props.hidden ? "opacity: 0; visibility: hidden;" : "")};
   ${(props) => (props.linkHover ? "background-color: green;" : "")}
 `;
@@ -60,7 +64,7 @@ const Cursor = () => {
     };
 
     const addLinkEvents = () => {
-      document.querySelectorAll("iframe").forEach((el) => {
+      document.querySelectorAll(".iframe-container").forEach((el) => {
         el.addEventListener("mouseover", () => setHidden(true));
         el.addEventListener("mouseout", () => setHidden(false));
       });
@@ -76,10 +80,6 @@ const Cursor = () => {
         el.addEventListener("mouseover", () => setLinkHover(true));
         el.addEventListener("mouseout", () => setLinkHover(false));
       });
-      document.querySelectorAll("iframe").forEach((el) => {
-        el.addEventListener("mouseover", () => setHidden(true));
-        el.addEventListener("mouseout", () => setHidden(false));
-      });
     };
 
     addEventListeners();
@@ -92,10 +92,12 @@ const Cursor = () => {
       hidden={hidden ? 1 : 0}
       click={click ? 1 : 0}
       linkHover={linkHover ? 1 : 0}
+      posY={position.y}
+      posX={position.x}
       // style={{ left: `${position.x}px`, top: `${position.y}px` }}
-      style={{
-        transform: `translate( calc(${position.x}px - 50%) , calc(${position.y}px - 50%))`,
-      }}
+      // style={{
+      //   transform: `translate( calc(${position.x}px - 50%) , calc(${position.y}px - 50%))`,
+      // }}
     />
   );
 };

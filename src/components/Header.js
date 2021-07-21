@@ -25,13 +25,6 @@ const Inner = styled.div`
   background-color: transparent;
 `;
 
-const MenuWrapper = styled.button`
-  background: none;
-  mix-blend-mode: difference;
-  max-width: 50px;
-  width: 100px;
-  position: fixed;
-`;
 const Menu = styled(MenuIcon)`
   width: 40px;
   height: 40px;

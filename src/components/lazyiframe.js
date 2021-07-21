@@ -17,6 +17,7 @@ const LazyIframe = ({ title, url }) => {
         position: "relative",
         width: "100%",
       }}
+      className="iframe-container"
       ref={containerRef}
     >
       {lockRef.current && (
