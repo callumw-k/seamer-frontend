@@ -23,8 +23,9 @@ const Hamburger = styled.span`
   height: 2px;
   width: 100%;
   position: absolute;
-  backdrop-filter: invert(1);
-  background-color: grey;
+  background-color: white;
+  mix-blend-mode: difference;
+  z-index: 3;
 `;
 
 const HamburgerOne = styled(Hamburger)`

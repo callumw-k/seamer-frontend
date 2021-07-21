@@ -29,7 +29,6 @@ const Menu = styled(MenuIcon)`
   width: 40px;
   height: 40px;
   margin-left: auto;
-  cursor: pointer;
   transition: 500ms ease-in color;
   color: ${(props) => (props.isOpen ? "white" : "var(--black)")};
   mix-blend-mode: difference;
@@ -80,7 +79,11 @@ const Header = ({ location }) => {
           <Link to="/">
             <Logo isopen={isOpen ? 1 : 0} islogovisible={isLogoVisible} />
           </Link>
-          <Menu isopen={isOpen ? 1 : 0} onClick={() => setOpen(!isOpen)} />
+          <Menu
+            className="menu-icon"
+            isopen={isOpen ? 1 : 0}
+            onClick={() => setOpen(!isOpen)}
+          />
           <NavIcon isopen={isOpen ? 1 : 0} onClick={() => setOpen(!isOpen)} />
         </Inner>
       </Wrapper>

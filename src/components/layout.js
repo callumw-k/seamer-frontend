@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { css, Global } from "@emotion/react";
 import "normalize.css";
 import "../css/variables.css";
@@ -6,8 +6,9 @@ import Footer from "./footer";
 import Header from "./Header";
 import styled from "@emotion/styled";
 import GetInTouch from "./globals/get-in-touch";
+
 import Cursor from "./cursor";
-import { BrowserView } from "react-device-detect";
+import { BrowserView, isMobile } from "react-device-detect";
 
 const globalStyles = css`
   * {
@@ -26,6 +27,10 @@ const globalStyles = css`
     font-family: var(--bodyFont);
     font-weight: var(--defaultFontWeight);
     line-height: 1.75;
+  }
+  html *,
+  body * {
+    cursor: none;
   }
 
   /*FROM TYPESCALE*/
@@ -95,10 +100,8 @@ export default function Layout({ location, children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
+      {(!isMobile && <Cursor />) || ""}
       <Header location={location} />
-      <BrowserView>
-        <Cursor />
-      </BrowserView>
       <MainStyles>{children}</MainStyles>
       <GetInTouch />
       <Footer location={location} />

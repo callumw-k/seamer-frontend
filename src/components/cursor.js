@@ -4,17 +4,16 @@ import styled from "@emotion/styled"; //we already import useState and useEffect
 const CursorStyles = styled.div`
   width: 40px;
   height: 40px;
-  border: 2px solid white;
   background-color: white;
   border-radius: 100%;
   position: fixed;
   pointer-events: none;
   z-index: 2;
   mix-blend-mode: difference;
+  opacity: 1;
   //transform: translate(-50%, -50%);
-  ${(props) => (props.hidden ? "opacity: 0;" : "opacity: 1;")}
-  ${(props) =>
-    props.linkHover ? "background-color: orange; mix-blend-mode: darken;" : ""}
+  ${(props) => (props.hidden ? "opacity: 0; visibility: hidden;" : "")};
+  ${(props) => (props.linkHover ? "background-color: green;" : "")}
 `;
 
 const Cursor = () => {
@@ -66,6 +65,10 @@ const Cursor = () => {
         el.addEventListener("mouseout", () => setLinkHover(false));
       });
       document.querySelectorAll("button").forEach((el) => {
+        el.addEventListener("mouseover", () => setLinkHover(true));
+        el.addEventListener("mouseout", () => setLinkHover(false));
+      });
+      document.querySelectorAll(".menu-icon").forEach((el) => {
         el.addEventListener("mouseover", () => setLinkHover(true));
         el.addEventListener("mouseout", () => setLinkHover(false));
       });
