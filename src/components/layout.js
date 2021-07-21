@@ -100,7 +100,8 @@ export default function Layout({ location, children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
-      {(!isMobile && <Cursor />) || ""}
+      {/*{(!isMobile && <Cursor />) || ""}*/}
+      <Cursor />
       <Header location={location} />
       <MainStyles>{children}</MainStyles>
       <GetInTouch />

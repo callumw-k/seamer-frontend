@@ -60,6 +60,10 @@ const Cursor = () => {
     };
 
     const addLinkEvents = () => {
+      document.querySelectorAll("iframe").forEach((el) => {
+        el.addEventListener("mouseover", () => setHidden(true));
+        el.addEventListener("mouseout", () => setHidden(false));
+      });
       document.querySelectorAll("a").forEach((el) => {
         el.addEventListener("mouseover", () => setLinkHover(true));
         el.addEventListener("mouseout", () => setLinkHover(false));

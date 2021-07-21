@@ -25,14 +25,17 @@ const Inner = styled.div`
   background-color: transparent;
 `;
 
+const MenuWrapper = styled.button`
+  background: none;
+  mix-blend-mode: difference;
+  max-width: 50px;
+  width: 100px;
+  position: fixed;
+`;
 const Menu = styled(MenuIcon)`
   width: 40px;
   height: 40px;
   margin-left: auto;
-  transition: 500ms ease-in color;
-  color: ${(props) => (props.isOpen ? "white" : "var(--black)")};
-  mix-blend-mode: difference;
-  -webkit-filter: invert(0.4);
 `;
 
 const Logo = styled(SeamerLogo)`
@@ -84,7 +87,6 @@ const Header = ({ location }) => {
             isopen={isOpen ? 1 : 0}
             onClick={() => setOpen(!isOpen)}
           />
-          <NavIcon isopen={isOpen ? 1 : 0} onClick={() => setOpen(!isOpen)} />
         </Inner>
       </Wrapper>
       <Navbar isOpen={isOpen} />
