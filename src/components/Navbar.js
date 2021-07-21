@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  z-index: 99;
+  z-index: 1;
   background-color: #ec564d;
   height: ${(props) => (props.isopen ? "100vh" : "0")};
   overflow: hidden;
@@ -65,7 +65,8 @@ export default function Navbar({ isOpen }) {
     <Wrapper id="header" isopen={isOpen ? 1 : 0}>
       <Inner>
         <Nav>
-          <Link to="/">Home</Link>
+          {/*<Link to="/">Home</Link>*/}
+          <Link to="/services">Services</Link>
           <Link to="/work">Work</Link>
           <Link to="/news">News</Link>
           <Link to="/about">About</Link>

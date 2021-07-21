@@ -5,14 +5,16 @@ import Navbar from "./Navbar";
 import { HiOutlineMenuAlt4 as MenuIcon } from "react-icons/hi";
 import SeamerLogo from "../images/svgs/seamer_logo.svg";
 import { Link } from "gatsby";
+import NavIcon from "./nav-icon";
 
 const Wrapper = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 2;
   border-top: 0.5rem solid #ec564d;
+  background-color: transparent;
 `;
 
 const Inner = styled.div`
@@ -20,6 +22,7 @@ const Inner = styled.div`
   align-items: center;
   height: 5rem;
   ${centre_content.xxxl};
+  background-color: transparent;
 `;
 
 const Menu = styled(MenuIcon)`
@@ -78,6 +81,7 @@ const Header = ({ location }) => {
             <Logo isopen={isOpen ? 1 : 0} islogovisible={isLogoVisible} />
           </Link>
           <Menu isopen={isOpen ? 1 : 0} onClick={() => setOpen(!isOpen)} />
+          <NavIcon isopen={isOpen ? 1 : 0} onClick={() => setOpen(!isOpen)} />
         </Inner>
       </Wrapper>
       <Navbar isOpen={isOpen} />

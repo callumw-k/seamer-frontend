@@ -21,10 +21,12 @@ export default function News({ data, location }) {
   function postLoop(posts) {
     return posts.map((post) => (
       <NewsCard
+        key={post.id}
         title={post.name}
         image={post.heroImage.asset}
         subtitle={post.subtitle}
         linkto={post.slug.current}
+        date={post.date}
       />
     ));
   }
@@ -48,6 +50,7 @@ export const query = graphql`
         id
         name
         subtitle
+        date(formatString: "DD.MM.YYYY")
         slug {
           current
         }

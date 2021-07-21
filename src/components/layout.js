@@ -6,7 +6,8 @@ import Footer from "./footer";
 import Header from "./Header";
 import styled from "@emotion/styled";
 import GetInTouch from "./globals/get-in-touch";
-import AnimatedCursor from "react-animated-cursor";
+import Cursor from "./cursor";
+import { BrowserView } from "react-device-detect";
 
 const globalStyles = css`
   * {
@@ -15,9 +16,11 @@ const globalStyles = css`
 
   html {
     font-size: var(--baseFontSize);
+    cursor: none;
   } /*18px*/
 
   body {
+    cursor: none;
     background-color: var(--backgroundColor);
     color: var(--textColor);
     font-family: var(--bodyFont);
@@ -92,13 +95,10 @@ export default function Layout({ location, children }) {
   return (
     <React.Fragment>
       <Global styles={globalStyles} />
-      {/*<AnimatedCursor*/}
-      {/*  color="77,236,114"*/}
-      {/*  outerSize={16}*/}
-      {/*  innerSize={16}*/}
-      {/*  innerScale={1}*/}
-      {/*/>*/}
       <Header location={location} />
+      <BrowserView>
+        <Cursor />
+      </BrowserView>
       <MainStyles>{children}</MainStyles>
       <GetInTouch />
       <Footer location={location} />

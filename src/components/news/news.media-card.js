@@ -16,11 +16,17 @@ const Wrapper = styled.article`
 `;
 
 const Content = styled.article`
-  font-size: var(--h4);
   order: 2;
+
+  p {
+    font-size: var(--h5);
+  }
+
   h2 {
     margin: 0.5rem 0 0;
+    font-size: var(--h3);
   }
+
   ${breakpoints.md} {
     width: 60%;
     order: 0;
@@ -32,7 +38,7 @@ const imageStyles = css`
   }
 `;
 
-export default function NewsCard({ title, subtitle, image, linkto }) {
+export default function NewsCard({ title, subtitle, image, linkto, date }) {
   const imageData = image.gatsbyImageData;
   const altText = image.altText || title;
   return (
@@ -42,6 +48,7 @@ export default function NewsCard({ title, subtitle, image, linkto }) {
           <h2>{title}</h2>
         </Link>
         <p>{subtitle}</p>
+        <p>{date}</p>
       </Content>
       <GatsbyImage css={imageStyles} alt={altText} image={imageData} />
     </Wrapper>

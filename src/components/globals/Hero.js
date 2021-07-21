@@ -2,8 +2,11 @@ import React from "react";
 import styled from "@emotion/styled";
 import { breakpoints, centre_content, fontMarginReset } from "../helpers";
 import { css } from "@emotion/react";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 
-const HeroSection = styled.div`
+const HeroSection = styled.div``;
+
+const Inner = styled.div`
   display: flex;
   flex-direction: column;
   ${(props) =>
@@ -36,22 +39,28 @@ const LeftContent = styled.div`
     }
   }
 `;
-export default function Hero({ title, description, width, subtitle }) {
+export default function Hero({ title, description, width, subtitle, image }) {
   return (
     <HeroSection width={width}>
-      <LeftContent>
-        {subtitle && (
-          <p
-            css={css`
-              font-size: var(--smallText);
-            `}
-          >
-            {subtitle}
-          </p>
-        )}
-        <h1>{title}</h1>
-      </LeftContent>
-      {description && <h2>{description}</h2>}
+      <Inner>
+        <LeftContent>
+          {subtitle && (
+            <p
+              css={css`
+                font-size: var(--smallText);
+              `}
+            >
+              {subtitle}
+            </p>
+          )}
+          <h1>{title}</h1>
+        </LeftContent>
+        {description && <h2>{description}</h2>}
+      </Inner>
+      {/*<StaticImage*/}
+      {/*  src="../../images/services/saffron-services-main.jpg"*/}
+      {/*  alt={title}*/}
+      {/*/>*/}
     </HeroSection>
   );
 }

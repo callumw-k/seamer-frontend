@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import React from "react";
 import useIntersectionObserver from "@react-hook/intersection-observer";
+import Cursor from "./cursor";
 
 const LazyIframe = ({ title, url }) => {
   const containerRef = useRef();
