@@ -5,16 +5,16 @@
 }
 
 @font-face {
-    font-family: "Nexa";
+    font-family: "Nexa Bold";
     src: url("../fonts/Nexa-Bold.woff2");
-    font-weight: 600;
+    /*font-weight: 600;*/
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Nexa";
+    font-family: "Nexa Extra Bold";
     src: url("../fonts/Nexa-Extra-Bold.woff2");
-    font-weight: 800;
+    /*font-weight: 800;*/
     font-display: swap;
 }
 
@@ -25,7 +25,7 @@
     --white: white;
 
     /*TYPOGRAPHY*/
-    --headingFont: 'Nexa', sans-serif;
+    --headingFont: 'Nexa Extra Bold', sans-serif;
     --bodyFont: 'Nexa', sans-serif;
     --baseFontSize: 100%;
 

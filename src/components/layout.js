@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { css, Global } from "@emotion/react";
 import "normalize.css";
 import "../css/variables.css";
@@ -8,7 +8,7 @@ import styled from "@emotion/styled";
 import GetInTouch from "./globals/get-in-touch";
 
 import Cursor from "./cursor";
-import { BrowserView, isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 
 const globalStyles = css`
   * {

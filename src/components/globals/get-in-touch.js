@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import InternalLink from "./internalLink";
-import { breakpoints, centre_content, fontMarginReset } from "../helpers";
+import { breakpoints, fontMarginReset } from "../helpers";
 const Wrapper = styled.section`
   margin-bottom: 100vh;
   padding: 6rem 5%;

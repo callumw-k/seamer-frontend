@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { breakpoints, centre_content, fontMarginReset } from "../helpers";
 import { css } from "@emotion/react";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { useSpring, animated } from "react-spring";
 
 const HeroSection = styled.div``;
 
@@ -30,16 +31,22 @@ const Inner = styled.div`
 `;
 
 const LeftContent = styled.div`
-  h1 {
-    word-break: break-word;
-    font-weight: var(--fontExtraBold);
-    font-size: var(--biggerHeading);
-    ${breakpoints.md} {
-      ${fontMarginReset};
-    }
+  overflow: hidden;
+`;
+const Header = styled(animated.h1)`
+  word-break: break-word;
+  font-weight: var(--fontExtraBold);
+  font-size: var(--biggerHeading);
+  ${breakpoints.md} {
+    ${fontMarginReset};
   }
 `;
 export default function Hero({ title, description, width, subtitle, image }) {
+  const [clicked, setClick] = useState(false);
+  const slideUp = useSpring({
+    from: { opacity: 0, transform: `translateY(100px)` },
+    to: { opacity: 1, transform: `translateY(0)` },
+  });
   return (
     <HeroSection width={width}>
       <Inner>
@@ -53,14 +60,11 @@ export default function Hero({ title, description, width, subtitle, image }) {
               {subtitle}
             </p>
           )}
-          <h1>{title}</h1>
+          <Header style={slideUp}> {title}</Header>
         </LeftContent>
         {description && <h2>{description}</h2>}
       </Inner>
-      {/*<StaticImage*/}
-      {/*  src="../../images/services/saffron-services-main.jpg"*/}
-      {/*  alt={title}*/}
-      {/*/>*/}
+      {image && <GatsbyImage image={image} alt={title} />}
     </HeroSection>
   );
 }

@@ -12,10 +12,6 @@ const CursorStyles = styled.div`
   mix-blend-mode: difference;
   opacity: 1;
   transform: translate(-100%, -100%);
-  ${(props) =>
-    `transform: translate( calc(${
-      props.posX === 0 ? "-50" : props.posX
-    }px - 50%) , calc(${props.posY}px - 50%))`}
   ${(props) => (props.hidden ? "opacity: 0; visibility: hidden;" : "")};
   ${(props) => (props.linkHover ? "background-color: green;" : "")}
 `;
@@ -95,9 +91,11 @@ const Cursor = () => {
       posY={position.y}
       posX={position.x}
       // style={{ left: `${position.x}px`, top: `${position.y}px` }}
-      // style={{
-      //   transform: `translate( calc(${position.x}px - 50%) , calc(${position.y}px - 50%))`,
-      // }}
+      style={{
+        transform: `translate( ${
+          position.x === 0 ? "-100%" : `calc(${position.x}px - 50%)`
+        } , calc(${position.y}px - 50%))`,
+      }}
     />
   );
 };

@@ -28,6 +28,7 @@ export default function GallerySorter({ gallery, name }) {
             key={image.asset.id}
             alt={image.asset?.altText ? image.asset.altText : name}
             image={image.asset.gatsbyImageData}
+            quality={100}
           />
         ))}
       </ImageGrid>
