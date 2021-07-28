@@ -2,9 +2,8 @@ import React from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { breakpoints, centre_content } from "../helpers";
-import StrategyIcon from "../../images/svgs/communications-icon.svg";
-import CommunicationsIcon from "../../images/svgs/strategy-icon.svg";
-import Digital from "../../images/svgs/digital-icon.svg";
+import Branding from "../../images/svgs/question-icon.svg";
+import { StaticImage } from "gatsby-plugin-image";
 //Wrapper styles
 const wrapperStyles = css`
   ${centre_content.lg};
@@ -15,13 +14,6 @@ const wrapperStyles = css`
 const mainH2Styles = css`
   font-weight: var(--fontBold);
 `;
-
-//HR Divider between main heading and expertise lists
-// const hrStyles = css`
-//   border: 2px solid black;
-//   width: 4rem;
-//   margin: 2rem 0;
-// `;
 
 //Grid Wrapper
 const GridWrapper = styled.div`
@@ -55,11 +47,6 @@ const GridItem = styled.div`
   }
 `;
 
-const IconStyles = css`
-  width: 80px;
-  margin-bottom: 2rem;
-`;
-
 //Styles for scroll text on mobile.
 const scollStyles = css`
   font-size: var(--smallText);
@@ -75,7 +62,7 @@ const scollStyles = css`
   } ;
 `;
 
-const expertiseInfo = {
+const data = {
   brand: {
     title: "Branding",
     attributes: [
@@ -87,7 +74,7 @@ const expertiseInfo = {
       "Brand Activation",
     ],
   },
-  communications: [
+  design: [
     "Stationery",
     "Publications",
     "Packaging",
@@ -118,28 +105,49 @@ export default function HomeAboutUs() {
       {/*<hr css={hrStyles} />*/}
       <GridWrapper>
         <GridItem>
-          <CommunicationsIcon css={css(IconStyles)} />
-          <h3>{expertiseInfo.brand.title}</h3>
+          <StaticImage
+            src="../../images/pages/home/question-icon.png"
+            alt="Branding"
+            layout="constrained"
+            height="100"
+            quality="100"
+            style={{ marginBottom: "2rem" }}
+          />
+          <h3>Brand</h3>
           <ul>
-            {expertiseInfo.brand.attributes.map((listItem) => (
+            {data.brand.attributes.map((listItem) => (
               <li key={listItem}>{listItem}</li>
             ))}
           </ul>
         </GridItem>
         <GridItem>
-          <Digital css={css(IconStyles)} />
+          <StaticImage
+            src="../../images/pages/home/mouse-pointer.png"
+            alt="Branding"
+            layout="constrained"
+            height="100"
+            quality="100"
+            style={{ marginBottom: "2rem" }}
+          />
           <h3>Digital</h3>
           <ul>
-            {expertiseInfo.digital.map((listItem) => (
+            {data.digital.map((listItem) => (
               <li key={listItem}>{listItem}</li>
             ))}
           </ul>
         </GridItem>
         <GridItem>
-          <StrategyIcon css={css(IconStyles)} />
+          <StaticImage
+            src="../../images/pages/home/pen.png"
+            alt="Branding"
+            layout="constrained"
+            height="100"
+            quality="100"
+            style={{ marginBottom: "2rem" }}
+          />
           <h3>Design</h3>
           <ul>
-            {expertiseInfo.communications.map((listItem) => (
+            {data.design.map((listItem) => (
               <li key={listItem}>{listItem}</li>
             ))}
           </ul>

@@ -12,8 +12,9 @@ const CursorStyles = styled.div`
   mix-blend-mode: difference;
   opacity: 1;
   transform: translate(-100%, -100%);
+  transition: 200ms height, opacity, width;
   ${(props) => (props.hidden ? "opacity: 0; visibility: hidden;" : "")};
-  ${(props) => (props.linkHover ? "background-color: green;" : "")}
+  ${(props) => (props.linkHover ? "width: 50px; height: 50px;" : null)}
 `;
 
 const Cursor = () => {

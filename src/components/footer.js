@@ -49,6 +49,9 @@ const IconWrapper = styled.div`
     margin: 0 0.5rem;
   }
 `;
+const SmallPrint = styled.div`
+  margin-top: 4rem;
+`;
 export default function Footer() {
   return (
     <Wrapper>
@@ -89,6 +92,9 @@ export default function Footer() {
             </a>
           </IconWrapper>
         </div>
+        <SmallPrint>
+          <p>© Seamer Design 2021</p>
+        </SmallPrint>
       </Inner>
     </Wrapper>
   );
