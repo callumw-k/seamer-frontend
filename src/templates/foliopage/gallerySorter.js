@@ -12,7 +12,15 @@ const ImageGrid = styled.div`
     grid-template-columns: 50% 50%;
 
     & > div:first-of-type {
-      grid-column: ${(props) => (props.length ? "1/3" : "1/2")};
+      grid-column: ${(props) => {
+        if (props.length === 3) {
+          return "1/3";
+        } else if (props.length === 1) {
+          return "1/3";
+        } else {
+          return "1/2";
+        }
+      }};
     }
 
     ${centre_content.xl};
@@ -20,9 +28,8 @@ const ImageGrid = styled.div`
 `;
 export default function GallerySorter({ gallery, name }) {
   if (gallery) {
-    let length = gallery.length === 3 ? 1 : 0;
     return (
-      <ImageGrid length={length}>
+      <ImageGrid length={gallery.length}>
         {gallery.map((image) => (
           <GatsbyImage
             key={image.asset.id}

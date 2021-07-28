@@ -113,7 +113,7 @@ export const query = graphql`
       firstGallery {
         images {
           asset {
-            gatsbyImageData(aspectRatio: 1.78)
+            gatsbyImageData
             id
             altText
           }
@@ -122,7 +122,7 @@ export const query = graphql`
       secondGallery {
         images {
           asset {
-            gatsbyImageData(aspectRatio: 1.78)
+            gatsbyImageData
             id
             altText
           }
