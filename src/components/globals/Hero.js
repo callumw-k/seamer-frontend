@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import { breakpoints, centre_content, fontMarginReset } from "../helpers";
 import { css } from "@emotion/react";
@@ -12,7 +12,7 @@ const Inner = styled.div`
   flex-direction: column;
   ${(props) =>
     props.width === "md" ? centre_content.lg : centre_content.xxxl};
-  padding: 8rem 0;
+  padding: 10rem 0;
   ${breakpoints.md} {
     flex-direction: row;
     align-items: center;
@@ -42,7 +42,6 @@ const Header = styled(animated.h1)`
   }
 `;
 export default function Hero({ title, description, width, subtitle, image }) {
-  const [clicked, setClick] = useState(false);
   const slideUp = useSpring({
     from: { opacity: 0, transform: `translateY(100px)` },
     to: { opacity: 1, transform: `translateY(0)` },
@@ -64,7 +63,7 @@ export default function Hero({ title, description, width, subtitle, image }) {
         </LeftContent>
         {description && <h2>{description}</h2>}
       </Inner>
-      {image && <GatsbyImage image={image} alt={title} />}
+      {image && <GatsbyImage layout="fullWidth" image={image} alt={title} />}
     </HeroSection>
   );
 }

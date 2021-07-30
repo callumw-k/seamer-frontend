@@ -9,7 +9,6 @@ export default function Services({ location, data }) {
   const servicesPage = data.servicesPage;
   const { heroimage } = servicesPage;
   const { title, description } = servicesPage.SEO;
-  console.log(servicesPage.services);
   return (
     <Layout>
       <HeadMeta
@@ -19,7 +18,7 @@ export default function Services({ location, data }) {
       />
       <Hero
         title="Services"
-        description="Made to deliver"
+        description="A full-service offering"
         image={heroimage.asset.gatsbyImageData}
       />
       {servicesPage.services &&
@@ -40,7 +39,7 @@ export const query = graphql`
       }
       heroimage {
         asset {
-          gatsbyImageData
+          gatsbyImageData(layout: FULL_WIDTH)
         }
       }
       services {

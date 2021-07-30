@@ -2,7 +2,6 @@ import React from "react";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { breakpoints, centre_content } from "../helpers";
-import Branding from "../../images/svgs/question-icon.svg";
 import { StaticImage } from "gatsby-plugin-image";
 //Wrapper styles
 const wrapperStyles = css`
@@ -109,8 +108,8 @@ export default function HomeAboutUs() {
             src="../../images/pages/home/question-icon.png"
             alt="Branding"
             layout="constrained"
-            height="100"
-            quality="100"
+            height={100}
+            quality={100}
             style={{ marginBottom: "2rem" }}
           />
           <h3>Brand</h3>
@@ -125,7 +124,7 @@ export default function HomeAboutUs() {
             src="../../images/pages/home/mouse-pointer.png"
             alt="Branding"
             layout="constrained"
-            height="100"
+            height={100}
             quality="100"
             style={{ marginBottom: "2rem" }}
           />
@@ -141,7 +140,7 @@ export default function HomeAboutUs() {
             src="../../images/pages/home/pen.png"
             alt="Branding"
             layout="constrained"
-            height="100"
+            height={100}
             quality="100"
             style={{ marginBottom: "2rem" }}
           />

@@ -52,7 +52,7 @@ const globalStyles = css`
 
   h1 {
     margin-top: 0;
-    line-height: 1.05;
+    line-height: 1.3;
     font-size: var(--h1);
   }
 

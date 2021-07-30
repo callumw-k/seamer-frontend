@@ -23,7 +23,7 @@ const ImageGrid = styled.div`
       }};
     }
 
-    ${centre_content.xl};
+    ${centre_content.xxl};
   }
 `;
 export default function GallerySorter({ gallery, name }) {

@@ -11,14 +11,15 @@ const FolioWrapper = styled.section`
 function ClientGenerator({ client, single }) {
   return (
     <MediaCard
-      image={client.heroImage.asset.gatsbyImageData}
-      alt={client.heroImage.asset.altText}
+      image={client.heroImage?.asset.gatsbyImageData}
+      alt={client.heroImage?.asset.altText}
       type={client.type}
       title={client.name}
       subtitle={client.subtitle}
       url={"work/" + client.slug.current}
       single={(single && single) || null}
       home={true}
+      videourl={client?.videurl}
     />
   );
 }
@@ -35,7 +36,15 @@ export default function HomeClients({ clients }) {
         <ClientGenerator single key={clients[2]._id} client={clients[2]} />
       </ClientSingle>
       <ClientDouble staggered={1}>
-        {clients.slice(3).map((client) => {
+        {clients.slice(3, 5).map((client) => {
+          return <ClientGenerator key={client._id} client={client} />;
+        })}
+      </ClientDouble>
+      <ClientSingle>
+        <ClientGenerator single key={clients[5]._id} client={clients[5]} />
+      </ClientSingle>
+      <ClientDouble>
+        {clients.slice(6, 8).map((client) => {
           return <ClientGenerator key={client._id} client={client} />;
         })}
       </ClientDouble>

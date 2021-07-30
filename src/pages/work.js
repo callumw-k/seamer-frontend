@@ -35,9 +35,10 @@ const Work = ({ data, location }) => {
           <MediaCard
             key={client._id}
             title={client.name}
-            image={client.heroImage.asset.gatsbyImageData}
+            image={client.heroImage?.asset.gatsbyImageData}
             url={client.slug.current}
             single
+            videourl={client?.videurl}
             subtitle={client.subtitle}
             extendStyles={css`
               h3 {
@@ -57,6 +58,7 @@ export const query = graphql`
       nodes {
         _id
         name
+        videurl
         slug {
           current
         }

@@ -4,8 +4,8 @@ import styled from "@emotion/styled";
 import { breakpoints, centre_content, fontMarginReset } from "../helpers";
 
 const ContentBlockWrapper = styled.div`
-  ${centre_content.xl};
-  margin: 4rem auto;
+  ${centre_content.xxl};
+  margin: 8rem auto;
   ${breakpoints.lg} {
     display: grid;
     grid-template-columns: 48% 50%;

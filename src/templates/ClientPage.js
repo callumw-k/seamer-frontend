@@ -12,10 +12,11 @@ import {
 import GallerySorter from "./foliopage/gallerySorter";
 import HeadMeta from "../components/HeadMeta";
 import Hero from "../components/globals/Hero";
+import LazyIframe from "../components/lazyiframe";
 
 const ContentBlockWrapper = styled.div`
-  ${centre_content.xl};
-  margin: 4rem auto;
+  ${centre_content.xxl};
+  margin: 8rem auto;
   ${breakpoints.lg} {
     display: grid;
     grid-template-columns: 48% 50%;
@@ -60,11 +61,16 @@ export default function ClientPage({ data, location }) {
         slug={location.pathname}
       />
       <Hero title={clientPage.name} subtitle={clientPage.subtitle} />
-      <GatsbyImage
-        alt={heroImage?.altText ? heroImage.altText : clientPage.name}
-        image={heroImage.gatsbyImageData}
-        quality={100}
-      />
+      {heroImage && (
+        <GatsbyImage
+          alt={heroImage?.altText ? heroImage.altText : clientPage.name}
+          image={heroImage.gatsbyImageData}
+          quality={100}
+        />
+      )}
+      {clientPage.videurl && (
+        <LazyIframe url={clientPage.videurl} title="Test" />
+      )}
       {clientPage.firstContent && (
         <ContentBlockGenerator block={clientPage.firstContent} />
       )}
@@ -92,6 +98,7 @@ export const query = graphql`
       name
       subtitle
       type
+      videurl
       heroImage {
         asset {
           gatsbyImageData(layout: FULL_WIDTH)

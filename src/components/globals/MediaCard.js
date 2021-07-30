@@ -4,6 +4,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { breakpoints } from "../helpers";
 import { Link } from "gatsby";
+import LazyIframe from "../lazyiframe";
 
 const ContentWrapper = styled.div`
   ${(props) => (props.home ? "padding: 0 5%" : "")};
@@ -45,17 +46,21 @@ export default function MediaCard({
   url,
   extendStyles,
   home,
+  videourl,
 }) {
   return (
     <div>
-      <Link to={url}>
-        <GatsbyImage
-          css={imgStyling}
-          style={{ overflow: "hidden" }}
-          imgStyle={{ transition: "200ms transform ease-in-out" }}
-          image={image}
-          alt={alt ? alt : title}
-        />
+      <Link style={{ width: "100%" }} to={url}>
+        {videourl && <LazyIframe url={videourl} title={title} />}
+        {image && (
+          <GatsbyImage
+            css={imgStyling}
+            style={{ overflow: "hidden" }}
+            imgStyle={{ transition: "200ms transform ease-in-out" }}
+            image={image}
+            alt={alt ? alt : title}
+          />
+        )}
       </Link>
       <ContentWrapper home={home ? 1 : 0} css={extendStyles} single={single}>
         <Link css={linkStyling} to={url}>

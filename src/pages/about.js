@@ -1,35 +1,62 @@
 import React from "react";
-import Content from "../components/about/about.first-content-block";
-import Layout from "../components/layout";
-import { css } from "@emotion/react";
-import SecondContentBlock from "../components/about/about.second-content-block";
 import styled from "@emotion/styled";
+import { graphql } from "gatsby";
+import Layout from "../components/layout";
+import Hero from "../components/globals/Hero";
+import ContentBlock from "../components/globals/content-block";
+import HeadMeta from "../components/HeadMeta";
+import AboutValues from "../components/about/about.values";
+// import Content from "../components/about/about.first-content-block";
+// import SecondContentBlock from "../components/about/about.second-content-block";
+
 const HeaderWrapper = styled.div`
   background-color: #f5f5f4;
   padding: 6rem 0;
 `;
-export default function About() {
+
+export default function About({ data, location }) {
+  const pageData = data.sanityContactPage;
+  const { title, description } = pageData.SEO;
   return (
     <Layout>
-      <HeaderWrapper>
-        <h2
-          css={css`
-            max-width: 1200px;
-            margin-left: clamp(
-              5%,
-              calc((100vw - 1564px) / 2),
-              calc((100vw - 1564px) / 2)
-            );
-            margin-right: 5%;
-          `}
-        >
-          We’re a collaborative team of strategists, creatives and designers,
-          who create, disperse, manage and maintain the branding pieces that
-          tell your story.
-        </h2>
-        <Content />
-      </HeaderWrapper>
-      <SecondContentBlock />
+      <HeadMeta
+        title={title}
+        description={description}
+        slug={location.pathname}
+      />
+      <Hero
+        title="About"
+        description="Your brand partners"
+        image={pageData.heroimage.asset.gatsbyImageData}
+      />
+      <ContentBlock block={pageData.firstBlock} />
+      <ContentBlock block={pageData.secondBlock} />
+      <AboutValues />
     </Layout>
   );
 }
+
+export const query = graphql`
+  {
+    sanityContactPage {
+      title
+      firstBlock {
+        title
+        content: _rawContentBlock
+      }
+      secondBlock {
+        title
+        content: _rawContentBlock
+      }
+      heroimage {
+        asset {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
+      }
+      SEO {
+        title: seoTitle
+        description: seoDescription
+      }
+    }
+  }
+`;

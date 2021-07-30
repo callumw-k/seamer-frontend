@@ -44,7 +44,7 @@ export const query = graphql`
   query {
     clients: allSanityClients(
       sort: { order: ASC, fields: _createdAt }
-      limit: 5
+      limit: 8
     ) {
       nodes {
         name
@@ -52,6 +52,7 @@ export const query = graphql`
         slug {
           current
         }
+        videurl
         heroImage {
           asset {
             gatsbyImageData(aspectRatio: 1.5)
