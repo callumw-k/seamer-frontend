@@ -110,6 +110,24 @@ const globalStyles = css`
       text-decoration: underline;
     }
   }
+
+  .smaller-spacing {
+    margin-bottom: 64px;
+  }
+
+  .large-spacing {
+    margin-bottom: 120px;
+    ${breakpoints.md} {
+      margin-bottom: 164px;
+    }
+  }
+
+  .large-spacing-centred {
+    margin: 0 auto 120px auto;
+    ${breakpoints.md} {
+      margin: 0 auto 164px auto;
+    }
+  }
 `;
 
 const MainStyles = styled.main`

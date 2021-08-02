@@ -5,13 +5,13 @@ import { breakpoints, centre_content, fontMarginReset } from "../helpers";
 import { css } from "@emotion/react";
 
 const ContentBlockWrapper = styled.div`
-  ${centre_content.xxl};
-  margin: 8rem auto;
   ${breakpoints.lg} {
     display: grid;
     grid-template-columns: 48% 50%;
     justify-content: space-between;
   }
+  ${centre_content.xxl};
+  margin-bottom: 124px;
 `;
 
 const Paragraph = styled.div`
@@ -29,7 +29,7 @@ const Paragraph = styled.div`
 export default function ContentBlock({ block }) {
   if (block.title && block.content) {
     return (
-      <ContentBlockWrapper>
+      <ContentBlockWrapper className="large-spacing">
         <h3
           className="medium-heading"
           css={css`

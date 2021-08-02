@@ -15,14 +15,12 @@ const Wrapper = styled.aside`
     align-items: center;
   }
   .title {
-    font-size: var(--h1);
     ${fontMarginReset};
   }
   .content {
     ${breakpoints.md} {
       max-width: 42%;
     }
-    font-size: var(--h4);
   }
   a {
     color: white;
@@ -32,8 +30,8 @@ const Wrapper = styled.aside`
 export default function GetInTouch() {
   return (
     <Wrapper>
-      <h2 className="title">Get in touch</h2>
-      <p className={"content"}>
+      <h2 className="title large-heading">Get in touch</h2>
+      <p className="content small-heading">
         Looking to update an existing project, or get started on a new one?{" "}
         <InternalLink text="Let's get started" url="/contact" />{" "}
       </p>

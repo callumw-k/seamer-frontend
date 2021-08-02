@@ -44,8 +44,8 @@ export default function Hero({ title, description, width, subtitle, image }) {
     to: { opacity: 1, transform: `translateY(0)` },
   });
   return (
-    <HeroSection width={width}>
-      <Inner>
+    <HeroSection className="smaller-spacing" width={width}>
+      <Inner className="large-spacing">
         <LeftContent>
           {subtitle && <p className="small-text">{subtitle}</p>}
           <Header className="large-heading" style={slideUp}>
