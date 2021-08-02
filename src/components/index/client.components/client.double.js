@@ -15,13 +15,17 @@ const Wrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
 
+    //target the second divs ContentWrapper and remove the padding
+    & > div:nth-child(2) > div {
+      padding: 0;
+    }
     & > div {
       flex-basis: 50%;
     }
 
     &>div: ${(props) => (props.staggered ? "last-child" : "first-of-type")} {
       margin-top: 12rem;
-      flex-basis: 42%;
+      flex-basis: 45%;
     }
   } ;
 `;

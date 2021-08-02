@@ -42,10 +42,7 @@ export default function IndexPage({ data, location }) {
 
 export const query = graphql`
   query {
-    clients: allSanityClients(
-      sort: { order: ASC, fields: _createdAt }
-      limit: 8
-    ) {
+    clients: allSanityClients(sort: { order: ASC, fields: name }, limit: 8) {
       nodes {
         name
         _id
@@ -55,7 +52,11 @@ export const query = graphql`
         videurl
         heroImage {
           asset {
-            gatsbyImageData(aspectRatio: 1.5)
+            gatsbyImageData(
+              aspectRatio: 1.55
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+            )
             altText
           }
         }

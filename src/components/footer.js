@@ -43,6 +43,9 @@ const ContainerInner = styled.div`
 `;
 
 const FooterLeft = styled.div`
+  ${breakpoints.md} {
+    margin-right: 2rem;
+  }
   h3 {
     font-size: var(--biggerHeading);
   }
@@ -57,7 +60,6 @@ const FooterRight = styled.div`
   display: flex;
   margin: var(--marginSpacingMD_NC);
   a {
-    font-weight: bold;
     font-size: var(--h4);
   }
 `;
@@ -91,7 +93,7 @@ const SmallPrint = styled.div``;
 
 export default function Footer() {
   return (
-    <Wrapper>
+    <Wrapper role="contentinfo">
       <Container>
         <ContainerInner>
           <FooterLeft>
@@ -132,7 +134,7 @@ export default function Footer() {
           </FooterLeft>
           <FooterRight>
             <Nav>
-              <p>Arround</p>
+              <p>Around</p>
               <NavLinks />
             </Nav>
             <Socials>

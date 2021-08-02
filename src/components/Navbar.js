@@ -41,7 +41,7 @@ const Nav = styled.nav`
     margin-right: 2rem;
   }
 `;
-const Socials = styled.div`
+const Socials = styled.aside`
   display: flex;
   flex-direction: column;
   // Hide the social links on mobile
@@ -66,11 +66,11 @@ export default function Navbar({ isOpen }) {
   return (
     <Wrapper id="header" isopen={isOpen ? 1 : 0}>
       <Inner>
-        <Nav>
+        <Nav aria-label="Primary Nav">
           {/*<Link to="/">Home</Link>*/}
           <NavLinks />
         </Nav>
-        <Socials>
+        <Socials aria-label="Social Links">
           <SocialLinks />
         </Socials>
       </Inner>

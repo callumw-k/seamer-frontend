@@ -5,7 +5,7 @@ import { breakpoints } from "../../helpers";
 const Wrapper = styled.div`
   ${breakpoints.md} {
     margin: 8rem 0;
-    padding-left: 4rem;
+    padding-left: 8rem;
   }
 `;
 

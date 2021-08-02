@@ -71,7 +71,7 @@ const Header = ({ location }) => {
     <React.Fragment>
       <Wrapper>
         <Inner>
-          <Link to="/">
+          <Link aria-label="Home" to="/">
             <Logo isopen={isOpen ? 1 : 0} islogovisible={isLogoVisible} />
           </Link>
           <Menu

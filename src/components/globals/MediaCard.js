@@ -28,6 +28,10 @@ const imgStyling = css`
 const titleStyling = css`
   margin: 0;
   font-size: var(--h2);
+  font-weight: 400;
+  // ${breakpoints.md} {
+  //   font-size: var(--h1);
+  // }
 `;
 
 const linkStyling = css`
@@ -54,11 +58,13 @@ export default function MediaCard({
         {videourl && <LazyIframe url={videourl} title={title} />}
         {image && (
           <GatsbyImage
+            quality={100}
             css={imgStyling}
             style={{ overflow: "hidden" }}
             imgStyle={{ transition: "200ms transform ease-in-out" }}
             image={image}
             alt={alt ? alt : title}
+            aria-label={title}
           />
         )}
       </Link>
