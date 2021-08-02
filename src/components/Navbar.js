@@ -4,6 +4,8 @@ import { Link } from "gatsby";
 import { breakpoints, centre_content } from "./helpers";
 import ExternalLink from "./globals/externalLink";
 import { css } from "@emotion/react";
+import NavLinks from "./globals/nav-links";
+import SocialLinks from "./globals/social-links";
 const Wrapper = styled.div`
   position: fixed;
   top: 0;
@@ -39,7 +41,7 @@ const Nav = styled.nav`
     margin-right: 2rem;
   }
 `;
-const SocialLinks = styled.div`
+const Socials = styled.div`
   display: flex;
   flex-direction: column;
   // Hide the social links on mobile
@@ -66,33 +68,11 @@ export default function Navbar({ isOpen }) {
       <Inner>
         <Nav>
           {/*<Link to="/">Home</Link>*/}
-          <Link to="/services">Services</Link>
-          <Link to="/work">Work</Link>
-          <Link to="/news">News</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          <NavLinks />
         </Nav>
-        <SocialLinks>
-          <p
-            css={css`
-              margin-bottom: 0;
-            `}
-          >
-            Social
-          </p>
-          <ExternalLink
-            text="Facebook"
-            url="https://www.facebook.com/Seamer-Design-103537193025995"
-          />
-          <ExternalLink
-            text="Instagram"
-            url="https://www.instagram.com/seamer_design/"
-          />
-          <ExternalLink
-            text="LinkedIn"
-            url="https://www.linkedin.com/company/seamer-design"
-          />
-        </SocialLinks>
+        <Socials>
+          <SocialLinks />
+        </Socials>
       </Inner>
     </Wrapper>
   );

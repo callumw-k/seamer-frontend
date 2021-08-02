@@ -121,32 +121,32 @@ export default function HomeAboutUs() {
         </GridItem>
         <GridItem>
           <StaticImage
-            src="../../images/pages/home/mouse-pointer.png"
-            alt="Branding"
+            src="../../images/pages/home/pen.png"
+            alt="Design"
             layout="constrained"
             height={100}
-            quality="100"
+            quality={100}
             style={{ marginBottom: "2rem" }}
           />
-          <h3>Digital</h3>
+          <h3>Design</h3>
           <ul>
-            {data.digital.map((listItem) => (
+            {data.design.map((listItem) => (
               <li key={listItem}>{listItem}</li>
             ))}
           </ul>
         </GridItem>
         <GridItem>
           <StaticImage
-            src="../../images/pages/home/pen.png"
-            alt="Branding"
+            src="../../images/pages/home/mouse-pointer.png"
+            alt="Digital"
             layout="constrained"
             height={100}
-            quality="100"
+            quality={100}
             style={{ marginBottom: "2rem" }}
           />
-          <h3>Design</h3>
+          <h3>Digital</h3>
           <ul>
-            {data.design.map((listItem) => (
+            {data.digital.map((listItem) => (
               <li key={listItem}>{listItem}</li>
             ))}
           </ul>
