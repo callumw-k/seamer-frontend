@@ -46,9 +46,6 @@ const FooterLeft = styled.div`
   ${breakpoints.md} {
     margin-right: 2rem;
   }
-  h3 {
-    font-size: var(--biggerHeading);
-  }
 
   &,
   a {
@@ -97,7 +94,7 @@ export default function Footer() {
       <Container>
         <ContainerInner>
           <FooterLeft>
-            <h3>
+            <h3 className="large-heading">
               We Make <br />
               Brand Work
             </h3>
@@ -105,14 +102,14 @@ export default function Footer() {
             <Details>
               {/*<h3>Our details.</h3>*/}
               <div>
-                <h4>Melbourne</h4>
+                <h4 className="small-heading">Melbourne</h4>
                 <p>Level 23, Tower 5, 727 Collins Street Docklands VIC 3008</p>
                 <p>
                   Phone <a href="tel:0390089838">03 9008 9838</a>
                 </p>
               </div>
               <div>
-                <h4>Ballarat</h4>
+                <h4 className="small-heading">Ballarat</h4>
                 <p>
                   Suite 8, 34A Doveton Street Nth <br /> Ballarat, VIC, 3350
                 </p>

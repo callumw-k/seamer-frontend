@@ -9,6 +9,7 @@ import GetInTouch from "./globals/get-in-touch";
 
 import Cursor from "./cursor";
 import { isMobile } from "react-device-detect";
+import { breakpoints } from "./helpers";
 
 const globalStyles = css`
   * {
@@ -82,8 +83,24 @@ const globalStyles = css`
     font-size: var(--h3);
     line-height: 1.2;
   }
+
+  .medium-heading {
+    font-size: var(--h2);
+    line-height: 1.2;
+  }
+
+  .large-heading {
+    font-size: var(--h1);
+    line-height: 1.04;
+  }
   /*END TYPESCALE*/
 
+  .small-text {
+    font-size: 16px;
+    ${breakpoints.md} {
+      font-size: 19px;
+    }
+  }
   a {
     color: var(--linkColor);
     margin-top: 0.5rem;

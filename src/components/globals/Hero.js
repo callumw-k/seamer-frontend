@@ -12,8 +12,9 @@ const Inner = styled.div`
   flex-direction: column;
   ${(props) =>
     props.width === "md" ? centre_content.lg : centre_content.xxxl};
-  padding: 10rem 0;
+  padding: 124px 0;
   ${breakpoints.md} {
+    padding: 140px 0;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -35,11 +36,7 @@ const LeftContent = styled.div`
 `;
 const Header = styled(animated.h1)`
   word-break: break-word;
-  font-weight: var(--fontExtraBold);
-  font-size: var(--biggerHeading);
-  ${breakpoints.md} {
-    ${fontMarginReset};
-  }
+  ${fontMarginReset};
 `;
 export default function Hero({ title, description, width, subtitle, image }) {
   const slideUp = useSpring({
@@ -50,16 +47,10 @@ export default function Hero({ title, description, width, subtitle, image }) {
     <HeroSection width={width}>
       <Inner>
         <LeftContent>
-          {subtitle && (
-            <p
-              css={css`
-                font-size: var(--smallText);
-              `}
-            >
-              {subtitle}
-            </p>
-          )}
-          <Header style={slideUp}> {title}</Header>
+          {subtitle && <p className="small-text">{subtitle}</p>}
+          <Header className="large-heading" style={slideUp}>
+            {title}
+          </Header>
         </LeftContent>
         {description && <h2>{description}</h2>}
       </Inner>

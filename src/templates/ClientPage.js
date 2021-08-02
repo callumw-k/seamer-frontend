@@ -38,7 +38,7 @@ function ContentBlockGenerator({ block }) {
   if (block.title && block.content) {
     return (
       <ContentBlockWrapper>
-        <h3>{block.title}</h3>
+        <h3 className="medium-heading">{block.title}</h3>
         <Paragraph>
           <BlockContent blocks={block.content} />
         </Paragraph>

@@ -28,10 +28,10 @@
     /*TYPOGRAPHY*/
     --headingFont: 'Nexa', sans-serif;
     --bodyFont: 'Nexa', sans-serif;
-    /*--baseFontSize: 100%;*/
+    --baseFontSize: 17px;
 
     --h1: 47px;
-    --h2: 38px;
+    --h2: 35px;
     --h3: 25px;
     --h4: 1.063rem;
     --h5: 1.75rem;
@@ -44,7 +44,7 @@
     --fontExtraBold: 800;
 
     --defaultFontWeight: var(--fontRegular);
-    /*--defaultHeadingWeight: var(--fontRegular);*/
+    --defaultHeadingWeight: var(--fontRegular);
 
     --textColor: var(--black);
     --backgroundColor: var(--white);
@@ -64,14 +64,13 @@
 @media screen and (min-width: 770px) {
     :root {
         --h1: 70px;
-        --h2: 47px;
+        --h2: 44pxpx;
         --h3: 29px;
         --h4: 1.563rem;
         --h5: 1.25rem;
         --biggerHeading: 3.815rem;
         --jumboHeading: 4.768rem;
 
-        /*--baseFontSize: 112.5%;*/
 
     }
 }
@@ -80,7 +79,8 @@
 @media screen and (min-width: 1440px) {
     :root {
         --h1: 93px;
-        --h2: 56px;
+        --h2: 53px;
         --h3: 33px;
+        --baseFontSize: 21px;
     }
 }

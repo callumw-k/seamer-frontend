@@ -10,7 +10,7 @@ const ContentWrapper = styled.div`
   ${(props) => (props.home ? "padding: 0 5%" : "")};
 
   p {
-    margin-top: 0.25rem;
+    margin-top: 1.2rem;
   }
 
   ${breakpoints.md} {
@@ -27,12 +27,6 @@ const imgStyling = css`
 
 const titleStyling = css`
   margin: 0;
-  font-size: var(--h2);
-  font-weight: 400;
-  ${breakpoints.md} {
-    font-size: var(--h1);
-    line-height: 1.1em;
-  }
 `;
 
 const linkStyling = css`
@@ -71,9 +65,11 @@ export default function MediaCard({
       </Link>
       <ContentWrapper home={home ? 1 : 0} css={extendStyles} single={single}>
         <Link css={linkStyling} to={url}>
-          <h3 css={titleStyling}>{subtitle}</h3>
+          <h3 className="medium-heading" css={titleStyling}>
+            {subtitle}
+          </h3>
         </Link>
-        {title && <p>{title}</p>}
+        {title && <p className="small-text">{title}</p>}
       </ContentWrapper>
     </div>
   );

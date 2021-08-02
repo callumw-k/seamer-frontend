@@ -16,9 +16,10 @@ const ContentBlockWrapper = styled.div`
 
 const Paragraph = styled.div`
   flex-basis: 50%;
-  p {
-    font-size: var(--h3);
-    line-height: 1.2;
+  font-size: var(--h3);
+  line-height: 1.2;
+  ul {
+    line-height: 1.4;
   }
   & p:first-of-type {
     margin-top: 0;
@@ -30,8 +31,10 @@ export default function ContentBlock({ block }) {
     return (
       <ContentBlockWrapper>
         <h3
+          className="medium-heading"
           css={css`
-            font-size: var(--h2);
+            ${fontMarginReset};
+            margin-bottom: 1.38rem;
           `}
         >
           {block.title}
