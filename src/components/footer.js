@@ -23,10 +23,12 @@ const Container = styled.div`
   padding: 10vh 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100%;
   width: 100%;
-
+  ${breakpoints.md} {
+    justify-content: center;
+  }
   ${centre_content.xxl};
 `;
 

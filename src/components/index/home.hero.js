@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 import { breakpoints, centre_content, fontMarginReset } from "../helpers";
 import InternalLink from "../globals/internalLink";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, useTransition } from "react-spring";
 
 const Wrapper = styled.section`
   display: flex;
@@ -43,11 +43,21 @@ const RightFlexBox = styled.div`
   }
 `;
 
+const titles = ["brands", "design", "digital"];
+
 export default function HomeHero(props) {
   const title = props.title;
   const subtitle = props.subtitle;
   const internalLinkText = props.internalLinkText;
   const internalLinkUrl = props.internalLinkUrl;
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSeconds((second) => (second === 2 ? 0 : second + 1));
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   const slideUp = useSpring({
     from: { opacity: 0, transform: `translateY(100px)` },
@@ -56,7 +66,7 @@ export default function HomeHero(props) {
   return (
     <Wrapper>
       <LeftFlexBox>
-        <animated.h1 style={slideUp}>{title ? title : "Title"}</animated.h1>
+        <animated.h1 style={slideUp}>Tailor Made {titles[seconds]}</animated.h1>
       </LeftFlexBox>
       <RightFlexBox>
         <h2>{subtitle ? subtitle : "Subtitle."}</h2>
