@@ -20,7 +20,7 @@ const Wrapper = styled.footer`
 `;
 
 const Container = styled.div`
-  padding: 10vh 0;
+  padding: 5vh 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
