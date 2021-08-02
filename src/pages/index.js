@@ -53,7 +53,7 @@ export const query = graphql`
         heroImage {
           asset {
             gatsbyImageData(
-              aspectRatio: 1.55
+              aspectRatio: 1.3
               placeholder: BLURRED
               layout: FULL_WIDTH
             )

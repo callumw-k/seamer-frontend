@@ -30,9 +30,6 @@ const LeftFlexBox = styled.div`
   flex-basis: 48%;
   h1 {
     ${fontMarginReset};
-    ${breakpoints.md} {
-      font-size: var(--jumboHeading);
-    }
   }
   overflow: hidden;
 `;

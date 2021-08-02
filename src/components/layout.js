@@ -54,6 +54,7 @@ const globalStyles = css`
     margin-top: 0;
     line-height: 1.3;
     font-size: var(--h1);
+    font-weight: var(--fontBold);
   }
 
   h2 {
@@ -77,6 +78,10 @@ const globalStyles = css`
     font-size: var(--smallText);
   }
 
+  .small-heading {
+    font-size: var(--h3);
+    line-height: 1.2;
+  }
   /*END TYPESCALE*/
 
   a {

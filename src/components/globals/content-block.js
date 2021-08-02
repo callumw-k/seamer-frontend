@@ -2,6 +2,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import React from "react";
 import styled from "@emotion/styled";
 import { breakpoints, centre_content, fontMarginReset } from "../helpers";
+import { css } from "@emotion/react";
 
 const ContentBlockWrapper = styled.div`
   ${centre_content.xxl};
@@ -10,15 +11,15 @@ const ContentBlockWrapper = styled.div`
     display: grid;
     grid-template-columns: 48% 50%;
     justify-content: space-between;
-    h3 {
-      ${fontMarginReset};
-      font-size: var(--h2);
-    }
   }
 `;
 
 const Paragraph = styled.div`
   flex-basis: 50%;
+  p {
+    font-size: var(--h3);
+    line-height: 1.2;
+  }
   & p:first-of-type {
     margin-top: 0;
   }
@@ -28,7 +29,13 @@ export default function ContentBlock({ block }) {
   if (block.title && block.content) {
     return (
       <ContentBlockWrapper>
-        <h3>{block.title}</h3>
+        <h3
+          css={css`
+            font-size: var(--h2);
+          `}
+        >
+          {block.title}
+        </h3>
         <Paragraph>
           <BlockContent blocks={block.content} />
         </Paragraph>

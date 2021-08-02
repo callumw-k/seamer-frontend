@@ -10,9 +10,7 @@ const wrapperStyles = css`
 `;
 
 //Main heading styles.
-const mainH2Styles = css`
-  font-weight: var(--fontBold);
-`;
+const mainH2Styles = css``;
 
 //Grid Wrapper
 const GridWrapper = styled.div`

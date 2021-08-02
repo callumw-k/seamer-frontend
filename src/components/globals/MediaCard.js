@@ -29,9 +29,10 @@ const titleStyling = css`
   margin: 0;
   font-size: var(--h2);
   font-weight: 400;
-  // ${breakpoints.md} {
-  //   font-size: var(--h1);
-  // }
+  ${breakpoints.md} {
+    font-size: var(--h1);
+    line-height: 1.1em;
+  }
 `;
 
 const linkStyling = css`

@@ -20,12 +20,12 @@ const Wrapper = styled.div`
       padding: 0;
     }
     & > div {
-      flex-basis: 50%;
+      flex-basis: 42%;
     }
 
     &>div: ${(props) => (props.staggered ? "last-child" : "first-of-type")} {
-      margin-top: 12rem;
-      flex-basis: 45%;
+      margin-top: 8%;
+      flex-basis: 50%;
     }
   } ;
 `;
